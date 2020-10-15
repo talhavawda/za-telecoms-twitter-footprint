@@ -1,0 +1,20 @@
+Links uploaded on Moodle:
+
+https://en.wikipedia.org/wiki/Spring_Framework
+
+https://spring.io/tools
+
+https://spring.io/guides/gs/maven/ (Spring IO Java & Maven Tutorial)
+
+https://projects.spring.io/spring-social-facebook/ (SN processing with Spring)
+
+https://www.technicalkeeda.com/spring-tutorials/spring-social-facebook-integration-example (Spring Social Facebook Integration; Eclipse and Gradle)
+
+https://stackabuse.com/how-to-access-the-facebook-api-with-java-and-spring-boot/ (How to Access the Facebook API with Java and Spring Boot)
+
+https://projects.spring.io/spring-social/ (Spring Social Tutorial:
+Connect your Spring application with Software-as-a-Service (SaaS) API providers such as Facebook, Twitter, and LinkedIn.)
+
+https://community.neo4j.com/t/finding-influencers-and-communities-in-the-graph-community/7405 (Twitter and Neo4j)
+
+https://www.dev2qa.com/spring-boot-hello-world-example-in-sts/ (Thymeleaf Spring Web HelloWorld; Use as first project in STS 4)
