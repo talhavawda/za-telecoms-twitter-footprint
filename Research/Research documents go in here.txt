@@ -1,2 +1,5 @@
 Video tutorial(python & ne04j, simple Twitter interaction)
 https://youtu.be/Nkd6Ei-xuxI
+
+Scrapping data off Twitter using Tweepy, might be helpful
+https://towardsdatascience.com/how-to-scrape-tweets-from-twitter-59287e20f0f1
