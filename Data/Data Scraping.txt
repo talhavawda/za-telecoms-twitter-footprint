@@ -1,0 +1,14 @@
+Data scraping was done using Twint 
+
+We were able to set up a script that allowed us to scrape data 
+from the four companies that we are interseted in, and also access
+tweets that mention those companies.
+
+Tweets were pulled from Telkom, MTN, Afrihost and Rain
+
+The keywords that were used were centered around online education 
+and working from home. 
+"working from home ", "#WFH", "#workfromhome", "WiFi", "isp",
+"university data", "data", "studying",  "university", "exams", 
+"online learning", "zoom", "zero rated", "tests", "virtual",
+"assessments", "reception", "mobile data", "lockdown", "telecom"
