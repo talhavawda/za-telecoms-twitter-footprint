@@ -1,0 +1,8 @@
+Video tutorial(python & ne04j, simple Twitter interaction)
+https://youtu.be/Nkd6Ei-xuxI
+
+Tweepy vs Twint. They are basically the same. Tweepy better documentation, Twint doesn't need TwitterDeveloper license
+https://towardsdatascience.com/what-python-package-is-best-for-getting-data-from-twitter-comparing-tweepy-and-twint-f481005eccc9
+
+Scrapping data off Twitter using Tweepy, might be helpful
+https://towardsdatascience.com/how-to-scrape-tweets-from-twitter-59287e20f0f1
