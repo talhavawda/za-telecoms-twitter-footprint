@@ -10,7 +10,7 @@ def search_account(username):
     twint.run.Search(c)
 
 def search_keywords(word_phrase):
-    t = twint.Config()
+    t = twint.Config()  
     t.Search = word_phrase
     t.Since = '2019-10-01'
     t.Until = '2020-06-30'
@@ -24,7 +24,7 @@ for i in range(len(accounts)):
 
 keywords_phrases = ["working from home ", "#WFH", "#workfromhome", "WiFi", "isp",
                     "university data", "data", "studying",  "university", "exams", "online learning", "zoom",
-                    "zero rated", "tests", "virtual", "assessments"
+                    "zero rated", "tests", "virtual", "assessments",
                     "reception", "mobile data", "lockdown", "telecom"]
 for i in range(len(keywords_phrases)):
     key = keywords_phrases[i]
