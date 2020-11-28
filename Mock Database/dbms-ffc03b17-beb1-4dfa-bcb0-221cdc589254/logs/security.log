@@ -1,0 +1,98 @@
+2020-11-28 10:38:05.090+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} jwt.auth.private_key=certificates/security.key.pem
+2020-11-28 10:39:23.610+0000 INFO  Initializing system graph model for component 'security-users' with version -1 and status UNINITIALIZED
+2020-11-28 10:39:26.247+0000 INFO  Setting up initial user from `auth.ini` file: neo4j
+2020-11-28 10:39:26.248+0000 INFO  Creating new user 'neo4j' (passwordChangeRequired=false, suspended=false)
+2020-11-28 10:39:26.563+0000 INFO  Setting version for 'security-users' to 2
+2020-11-28 10:39:26.881+0000 INFO  After initialization of system graph model component 'security-users' have version 2 and status CURRENT
+2020-11-28 10:39:26.997+0000 INFO  Performing postInitialization step for component 'security-users' with version 2 and status CURRENT
+2020-11-28 10:39:28.950+0000 INFO  Initializing system graph model for component 'security-privileges' with version -1 and status UNINITIALIZED
+2020-11-28 10:39:28.954+0000 INFO  Initializing security model with 6 roles
+2020-11-28 10:39:30.825+0000 INFO  Setting version for 'security-privileges' to 4
+2020-11-28 10:39:31.082+0000 INFO  Assigned admin role to user 'neo4j'.
+2020-11-28 10:39:31.083+0000 INFO  After initialization of system graph model component 'security-privileges' have version 4 and status CURRENT
+2020-11-28 11:04:46.935+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} jwt.auth.private_key=certificates/security.key.pem
+2020-11-28 11:05:25.907+0000 INFO  Performing postInitialization step for component 'security-users' with version 2 and status CURRENT
+2020-11-28 11:05:25.908+0000 INFO  Updating the initial password in component 'security-users'  
+2020-11-28 11:05:25.915+0000 INFO  Updating initial user password from `auth.ini` file: neo4j
+2020-11-28 11:05:46.406+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:05:46.406+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:05:46.422+0000 INFO  [neo4j]: logged in
+2020-11-28 11:05:47.021+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:05:47.021+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:05:47.021+0000 INFO  [neo4j]: logged in
+2020-11-28 11:08:06.234+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:08:06.234+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:08:06.234+0000 INFO  [neo4j]: logged in
+2020-11-28 11:08:10.098+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:08:10.100+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:08:10.102+0000 INFO  [neo4j]: logged in
+2020-11-28 11:08:10.122+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:08:10.124+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:08:10.129+0000 INFO  [neo4j]: logged in
+2020-11-28 11:08:10.144+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:08:10.147+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:08:10.150+0000 INFO  [neo4j]: logged in
+2020-11-28 11:08:10.174+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:08:10.177+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:08:10.178+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:08:10.179+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:08:10.179+0000 INFO  [neo4j]: logged in
+2020-11-28 11:08:10.181+0000 INFO  [neo4j]: logged in
+2020-11-28 11:10:09.069+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:10:09.069+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:10:09.070+0000 INFO  [neo4j]: logged in
+2020-11-28 11:10:56.440+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} jwt.auth.private_key=certificates/security.key.pem
+2020-11-28 11:11:02.465+0000 INFO  Performing postInitialization step for component 'security-users' with version 2 and status CURRENT
+2020-11-28 11:11:02.470+0000 INFO  Updating the initial password in component 'security-users'  
+2020-11-28 11:11:02.479+0000 INFO  Updating initial user password from `auth.ini` file: neo4j
+2020-11-28 11:11:08.583+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:08.583+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:08.598+0000 INFO  [neo4j]: logged in
+2020-11-28 11:11:09.053+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:09.053+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:09.053+0000 INFO  [neo4j]: logged in
+2020-11-28 11:11:53.977+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:53.978+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:53.980+0000 INFO  [neo4j]: logged in
+2020-11-28 11:11:56.063+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:56.067+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:56.069+0000 INFO  [neo4j]: logged in
+2020-11-28 11:11:56.072+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:56.084+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:56.084+0000 INFO  [neo4j]: logged in
+2020-11-28 11:11:56.189+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:56.191+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:56.204+0000 INFO  [neo4j]: logged in
+2020-11-28 11:11:56.209+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:56.212+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:56.228+0000 INFO  [neo4j]: logged in
+2020-11-28 11:11:56.244+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:11:56.244+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:11:56.244+0000 INFO  [neo4j]: logged in
+2020-11-28 11:21:48.384+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:21:48.384+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:21:48.384+0000 INFO  [neo4j]: logged in
+2020-11-28 11:21:50.060+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:21:50.061+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:21:50.066+0000 INFO  [neo4j]: logged in
+2020-11-28 11:21:50.077+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:21:50.078+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:21:50.079+0000 INFO  [neo4j]: logged in
+2020-11-28 11:21:50.153+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:21:50.154+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:21:50.155+0000 INFO  [neo4j]: logged in
+2020-11-28 11:21:50.169+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:21:50.170+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:21:50.171+0000 INFO  [neo4j]: logged in
+2020-11-28 11:21:50.185+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 11:21:50.187+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 11:21:50.189+0000 INFO  [neo4j]: logged in
+2020-11-28 12:21:55.892+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 12:21:55.924+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 12:21:55.968+0000 INFO  [neo4j]: logged in
+2020-11-28 12:21:55.985+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 12:21:55.985+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 12:21:56.001+0000 INFO  [neo4j]: logged in
+2020-11-28 12:25:45.459+0000 INFO  {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Log in attempted for user 'neo4j'.
+2020-11-28 12:25:45.460+0000 ERROR {plugin-com.neo4j.plugin.jwt.auth.JwtAuthPlugin} Invalid serialized unsecured/JWS/JWE object: Missing part delimiters
+2020-11-28 12:25:45.461+0000 INFO  [neo4j]: logged in
