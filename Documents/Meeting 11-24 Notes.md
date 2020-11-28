@@ -1,3 +1,12 @@
+# Topic
+
+Quantifying and classifying the Digital (Social Media) Footprint of South African telecommunications companies (ISPs and mobile operators) before and during the Covid-19 pandemic (and correlating it / its relation with the transition to online learning in SA)
+- The company’s posts, its interactions with users, and its interactions with other companies
+- Users mentioning the company in tweets (Sentiment Analysis), which other companies they follow and/or tweet about (to group related companies together in a cluster)
+
+<br>
+<br>
+
 # Meeting Notes
 
 - Wrap up technical risks before looking at what data we actually found
@@ -60,10 +69,20 @@
 
 - Get data into a Neo4j database
 - Look at how to use the Cypher query language
+  - See how to display query results in tabulated/graph form
 - Formulate list of queries
+  - ... that will produce the analytics for your report on the topic
+  - Do some by analysing the data that was collected
+- Develop Web Interface/Architecture
+  - Integrate the database API into the website so that queries can be visualised by the site
 
 
 - See Neo4j demos
+- Extend the scraping to see from those users who mentioned (at least) 1 of the 4 companies, see which other ISP Companies they follow
+- We can extend the twitter scraping (the Python script) as:
+  - Users don’t have to necessarily @ the ISP for the tweet to be included
+  - Include more keywords, especially regarding the names of the ISP’s themselves -> E.g.‘covid’, ‘telkom’…..etc.
+
 <br>
 
 # Queries
@@ -82,15 +101,36 @@ Queries:
     - being more responsive, connecting with customers, attending to their questions/queries/complaints via Tweeting
   - More campaigns
     - Do users react well to the new campaigns?
-- Over the time period, is there a change in sentiment?
+- Over the time period, is there a change in sentiment (Sentiment Analysis)?
+  - the sentiment of the 4 companies we chose and if there’s been a change from before to after lockdown
   - This shows whether the ISPs are responding/adapting to the changing requirements due to Covid
   - Sir: The sentiment being the same or getting worse (more complaints) is counterintuitive as you'd expect the ISPs to adapt and exploit the situation with more campains and offers
-  - Consider the bias that users are much more likely to express a negative sentiment than a positive sentiment
+  - Consider the bias that users are much more likely to express a negative sentiment than a positive sentiment (as they'll only tweet when they have an issue)
     - 'No news is good news'
     - If there is a drop in complaints then you can take it as a positive outcome
     - More complaints could also be seen as customers opening up to them and coming forward with their complaints/dissatisfactions
 - List of items that the customers complain about
+- How SA university students have been affected by (their sentiment with respect to) transitioning to online learning/studying and whether they’ve been able to cope
+- If a user(s) follows this ISP company, which other companies do they follow?
 
+<br>
+
+# Basic Analysis
+
+From looking at few entries in the csv files, the following trends were seen:
+(Formulate queries based on them and add them to the Queries list)
+
+- Users on twitter are complaining/ranting about the service provided by the ISPs/ mobile networks
+  - Network connection – no connectivity, v low speed
+  - Service delivery
+  - Poor customer services
+  - Data disappearing
+- Asking about products/prices
+- Students complaining about network coverage
+- A lot of the users’ issues are with Telkom
+
+
+<br>
 <br>
 
 # Presenting
