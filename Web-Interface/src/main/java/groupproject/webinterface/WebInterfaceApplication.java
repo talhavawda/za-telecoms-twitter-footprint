@@ -1,5 +1,7 @@
 package groupproject.webinterface;
 
+import groupproject.webinterface.model.DataBaseConnection;
+import groupproject.webinterface.model.QueryNexus;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -15,6 +17,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebInterfaceApplication {
 
 	public static void main(String[] args) {
+		QueryNexus.initQueryNexus();
+		//run
 		SpringApplication.run(WebInterfaceApplication.class, args); //launch the server
 	}
 

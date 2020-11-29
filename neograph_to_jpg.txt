@@ -1,0 +1,5 @@
+this item allows us to query neo4j, and convert the resultant graph to a jpg for use on the front end
+
+https://github.com/jexp/neo4j-graphviz
+
+unfortunately it is javascript but we can make a plan to integrate it
