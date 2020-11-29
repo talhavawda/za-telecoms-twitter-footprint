@@ -1,7 +1,5 @@
 package groupproject.webinterface.model;
 
-import groupproject.webinterface.Abstract.DataModel;
-
 import java.util.HashMap;
 
 public class QueryNexus {
