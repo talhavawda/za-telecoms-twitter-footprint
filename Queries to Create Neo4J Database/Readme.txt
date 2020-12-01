@@ -8,7 +8,7 @@ Create a database
 3. Click on the button that says "Open Folder"
 A file explorer window should open up
 5. Open the "import" folder
-6. Copy and paste the csv files (from the Data folder in the repo) into this import folder
+6. Copy and paste the two csv files (from the Data folder in the repo) into this import folder
 
 Start and open the database
 
