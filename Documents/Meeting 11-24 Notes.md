@@ -67,14 +67,43 @@ Quantifying and classifying the Digital (Social Media) Footprint of South Africa
 
 # Todo
 
-- Get data into a Neo4j database
+- ~~Get data into a Neo4j database~~ [DONE]
+  - Note: Everyone has to create their own local database using Neo4j Desktop. Your Web Interface server will connect to this database. 
 - Look at how to use the Cypher query language
   - See how to display query results in tabulated/graph form
-- Formulate list of queries
-  - ... that will produce the analytics for your report on the topic
+  - Useful Links:
+    - [Cypher count() summary][7]
+    - [Cypher Aggregations][8]
+- Formulate the list of queries (that will produce the analytics for your report on the topic)
+  - A draft of a few have been done in the Queries section below
+    - Extend it to  Compile a formal exhaustive list
   - Do some by analysing the data that was collected
 - Develop Web Interface/Architecture
   - Integrate the database API into the website so that queries can be visualised by the site
+    - ~~Connect the Web Interface to the local database~~
+    - Code the Controllers for the Queries
+    - Code the Web Interface site
+    - **Useful Links** for using Neo4j in IntelliJ with Spring:
+        - See the Database class I made to represent the database and handle a query
+      - [Spring Data Neo4j - Developing Spring Applications with Neo4j][1]
+        - I've already done this (configuring the project)
+        - [It's API][2]
+      - [CRUD Controller Example][3]
+        - See the Database class I made to represent the database and handle a query
+          - Thus in our program a Controller just needs to call Database.query(q);
+      - [Neo4j Data Driver][4]
+        - [Manual][5]
+        - [API][6]
+
+
+[1]: https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference
+[2]: https://docs.spring.io/spring-data/neo4j/docs/current/api/
+[3]: https://github.com/neo4j/neo4j-java-driver-spring-boot-starter/blob/master/docs/manual/getting-started.adoc#example-crud-controller
+[4]: https://github.com/neo4j/neo4j-java-driver/tree/4.0
+[5]: https://neo4j.com/docs/driver-manual/4.0/
+[6]: https://neo4j.com/docs/api/java-driver/4.0/
+[7]: https://neo4j.com/developer/kb/fast-counts-using-the-count-store/
+[8]: https://neo4j.com/docs/cypher-manual/current/functions/aggregating/
 
 
 - See Neo4j demos
@@ -97,6 +126,8 @@ Quantifying and classifying the Digital (Social Media) Footprint of South Africa
 
 Queries:
 - Have the ISPs been more active on Twitter since Covid/Lockdown as compared to before?
+  - Number of tweets of each company before vs after lockdown
+    - South Africa went into lockdown on 26 March 2020 so use this date 
   - Interactions with users
     - being more responsive, connecting with customers, attending to their questions/queries/complaints via Tweeting
   - More campaigns
