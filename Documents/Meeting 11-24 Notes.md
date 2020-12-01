@@ -69,18 +69,27 @@ Quantifying and classifying the Digital (Social Media) Footprint of South Africa
 
 - ~~Get data into a Neo4j database~~ [DONE]
   - Note: Everyone has to create their own local database using Neo4j Desktop. Your Web Interface server will connect to this database. 
+  
+  <br>
+  
 - Look at how to use the Cypher query language
   - See how to display query results in tabulated/graph form
   - Useful Links:
     - [Cypher count() summary][7]
     - [Cypher Aggregations][8]
+    
+<br>
+
 - Formulate the list of queries (that will produce the analytics for your report on the topic)
   - A draft of a few have been done in the Queries section below
     - Extend it to  Compile a formal exhaustive list
   - Do some by analysing the data that was collected
+  
+<br>
+
 - Develop Web Interface/Architecture
   - Integrate the database API into the website so that queries can be visualised by the site
-    - ~~Connect the Web Interface to the local database~~
+    - ~~Connect the Web Interface to the local database~~ [DONE]
     - Code the Controllers for the Queries
     - Code the Web Interface site
     - **Useful Links** for using Neo4j in IntelliJ with Spring:
@@ -113,6 +122,7 @@ Quantifying and classifying the Digital (Social Media) Footprint of South Africa
   - Include more keywords, especially regarding the names of the ISP’s themselves -> E.g.‘covid’, ‘telkom’…..etc.
 
 <br>
+
 
 # Queries
 
