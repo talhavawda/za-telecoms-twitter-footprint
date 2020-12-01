@@ -1,8 +1,9 @@
 package groupproject.webinterface;
 
-import groupproject.webinterface.model.DataBaseConnection;
+import groupproject.webinterface.model.Database;
 import groupproject.webinterface.model.QueryNexus;
 import org.springframework.boot.SpringApplication;
+import org.springframework.data.neo4j.core.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
@@ -17,9 +18,27 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebInterfaceApplication {
 
 	public static void main(String[] args) {
-		QueryNexus.initQueryNexus();
+
 		//run
 		SpringApplication.run(WebInterfaceApplication.class, args); //launch the server
+
+		QueryNexus.initQueryNexus();
+
+
+		Database db = null;
+
+		try {
+			db = Database.instance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
+		try {
+			db.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
