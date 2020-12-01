@@ -8,16 +8,15 @@ A file explorer window should open up
 
 Start and open the database
 
-PLEASE DONT USE THE CYPHER QUERY 
-NAMED "2. User And Tweets"
 
-Create Nodes and Relationships.
 Execute the queries in the following order:
-	Execute 1. Constraints and Indexes
-	Execute 2.Load Users and Tweets
-	Execute 3. Hashtags and Tweets
-	Execute 3. Tweet And Mentions
+(Copy the Query code one at a time and paste it in the Neo4j editor and execute)
+	1. Constraints and Indexes
+	2.1 Companies and Tweets
+	2.2 Users and Tweets
+	3. Tweet and Hashtags
+	4. Tweet And Mentions
 
-Cypher queries 0 and 4 dont deal with the creation of the
+Cypher queries 0 and 5 dont deal with the creation of the
 database, but show some usefull graphics
 
