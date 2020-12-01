@@ -1,5 +1,6 @@
-HELP.md
+#HELP.md
 target/
+javadocs and sources/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -19,6 +20,7 @@ target/
 *.iml
 *.ipr
 
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -31,3 +33,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Javadocs ###
+# lib/*javadoc.jar #Its not applying to the lib folder. When i change lib to javadocs and sources then it works
