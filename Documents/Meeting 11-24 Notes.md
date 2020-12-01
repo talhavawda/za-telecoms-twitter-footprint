@@ -104,7 +104,20 @@ Quantifying and classifying the Digital (Social Media) Footprint of South Africa
         - [Manual][5]
         - [API][6]
 
+<br>
 
+  - Analytics
+      - Code them using Controllers
+    - Basic Analytics
+      - Graph diagrams
+        - Bar Graph, Line Graph, etc.
+      - Tabulated Data
+    - Advanced Analytics
+      - Sentiment Analysis
+      - NLP
+      - Predictive Analysis
+        - (e.g. comparing 2 companies etc.)
+    
 [1]: https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference
 [2]: https://docs.spring.io/spring-data/neo4j/docs/current/api/
 [3]: https://github.com/neo4j/neo4j-java-driver-spring-boot-starter/blob/master/docs/manual/getting-started.adoc#example-crud-controller
