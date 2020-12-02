@@ -2,6 +2,9 @@ package groupproject.webinterface.model;
 
 import org.neo4j.driver.*;
 
+
+import java.util.List;
+
 /**
  * Todo - make this a singleton class (Apply the Singleton Design Pattern)
  *
@@ -17,16 +20,43 @@ public class Database implements AutoCloseable{
     }
 
     public void connect(){
-        driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("neo4j", "12345"));
 
+        // make sure to change username to the name of a user profile you created in the DB,
+        // BUT NOT "neo4j" as this is reserved user and will cause authentication error
+        //same for password
+        driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("java_application", "12345"));
     }
+
+    /*DEPRECATED
+    causes ResultConsumedException
+    as there is a limited time neo4j driver allows us to work on a result
+
+    use queryAsRecordList instead
+
 
     public Result query(String q){
         try ( Session session = driver.session() )
         {
+
             Query query = new Query(q);
             Result result = session.run(query);
             return result;
+
+        }
+
+    }
+
+     */
+
+    public List<Record> queryAsRecordList(String q){
+        try ( Session session = driver.session() )
+        {
+            Query query = new Query(q);
+
+            Result result = session.run(query);
+
+            return result.list();
+
 
         }
 

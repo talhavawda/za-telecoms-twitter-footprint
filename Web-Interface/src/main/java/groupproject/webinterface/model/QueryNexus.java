@@ -10,7 +10,9 @@ public class QueryNexus {
         String[][] keysAndQueryBases =
                 {
                         {"fullgraph", "match(n) return(n)"},
-                        {"numtweets", "MATCH (n:user) RETURN count(n) as count"}
+                        {"numtweets", "MATCH (company{username:'%s'})--(tweet) RETURN count(tweet)"},
+                        {"proof", "MATCH (n:company) RETURN count(n) as count"}
+
                 };
 
         queryBodies = new HashMap<>();

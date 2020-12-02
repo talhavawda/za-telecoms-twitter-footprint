@@ -21,15 +21,21 @@ public class NumTweetsController {
 
         QueryBody query = new QueryBody(QueryNexus.get("numtweets") , new String[]{company});
 
+        String result;
 
-        Database database = Database.instance();
-
-        String q = (query.getFullQuery());
-        Result r = database.query(q);
-        String result = r.single().get( 0 ).asString();
+        try {
+            Database database = Database.instance();
 
 
-        System.out.println(result+" IS THE ANSWER");
+            String q = (query.getFullQuery());
+            result = database.queryAsRecordList(q).get(0).get(0)+"";
+
+        }catch (Exception e){
+            e.printStackTrace();
+            result = "something went wrong";
+        }
+
+
 
         viewTemplate.addAttribute("company",company);
         viewTemplate.addAttribute("count",result);

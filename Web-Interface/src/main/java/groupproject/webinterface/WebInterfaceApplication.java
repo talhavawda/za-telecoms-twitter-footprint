@@ -33,12 +33,16 @@ public class WebInterfaceApplication {
 			e.printStackTrace();
 		}
 
+/*
 
 		try {
 			db.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+ */
+
 	}
 
 }
