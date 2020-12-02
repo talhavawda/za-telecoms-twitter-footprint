@@ -34,14 +34,15 @@ public class WebInterfaceApplication {
 		}
 
 /*
+
 		try {
 			db.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-
  */
+
 	}
 
 }

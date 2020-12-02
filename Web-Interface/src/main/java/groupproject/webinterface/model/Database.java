@@ -2,6 +2,7 @@ package groupproject.webinterface.model;
 
 import org.neo4j.driver.*;
 
+
 import java.util.List;
 
 /**
@@ -19,6 +20,7 @@ public class Database implements AutoCloseable{
     }
 
     public void connect(){
+
         // make sure to change username to the name of a user profile you created in the DB,
         // BUT NOT "neo4j" as this is reserved user and will cause authentication error
         //same for password
@@ -31,14 +33,13 @@ public class Database implements AutoCloseable{
 
     use queryAsRecordList instead
 
+
     public Result query(String q){
         try ( Session session = driver.session() )
         {
-            //connect();
+
             Query query = new Query(q);
-
             Result result = session.run(query);
-
             return result;
 
         }
@@ -60,6 +61,7 @@ public class Database implements AutoCloseable{
         }
 
     }
+
     @Override
     public void close() throws Exception {
         driver.close();
