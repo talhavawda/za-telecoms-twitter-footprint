@@ -19,7 +19,7 @@ public class NumTweetsController {
     @RequestMapping(value="/numtweets", method = RequestMethod.GET)
     public String numTweets(@RequestParam(value="company") String company, Model viewTemplate){
 
-        QueryBody query = new QueryBody(QueryNexus.get("numtweets") , new String[]{company});
+        QueryBody query = new QueryBody(QueryNexus.get("numtweetsbycompany") , new String[]{company});
 
         String result;
 
