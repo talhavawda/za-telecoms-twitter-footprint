@@ -14,6 +14,7 @@ public class QueryNexus {
                         {"numtweetsbycompany", "MATCH (company{username:'%s'})--(tweet) RETURN count(tweet)"},
                         {"tweettextbycompany","MATCH (company{username:'%s'})--(tweet) RETURN (tweet.tweet)"}
 
+
                 };
 
         queryBodies = new HashMap<>();

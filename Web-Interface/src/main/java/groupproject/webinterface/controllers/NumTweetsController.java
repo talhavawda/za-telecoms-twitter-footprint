@@ -26,6 +26,7 @@ public class NumTweetsController {
         try {
             Database database = Database.instance();
 
+
             String q = (query.getFullQuery());
             result = database.queryAsRecordList(q).get(0).get(0)+"";
 
@@ -33,6 +34,7 @@ public class NumTweetsController {
             e.printStackTrace();
             result = "something went wrong";
         }
+
 
 
         viewTemplate.addAttribute("company",company);
