@@ -8,6 +8,7 @@
 1. Set up your local database using Neo4j Desktop
   - See the Readme.txt in the Queries to  Create Neo4j Database folder
   - user by default is 'neo4j'
+  - create new user 'java_application' with reader permission, as user 'neo4j' is taken by the neo4j browser
   - Set the database password to '12345'
   
 The database needs to be running for the Web Interface to connect to it
