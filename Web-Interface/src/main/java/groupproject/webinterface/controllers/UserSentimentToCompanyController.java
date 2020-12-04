@@ -1,7 +1,7 @@
 package groupproject.webinterface.controllers;
 
 import groupproject.webinterface.model.Database;
-import groupproject.webinterface.model.SentimentIdentifier;
+import groupproject.webinterface.model.sentiment.SentimentAnalyzer;
 import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -34,23 +33,6 @@ public class UserSentimentToCompanyController {
 
             records = Database.instance().query("tweets_user_mentions_company",params);
 
-
-
-
-            List<Object> sentiments = new ArrayList<>();
-            for (Record record:records){
-                Object sentiment = SentimentIdentifier.instance().getSentiment(record.get("tweet").asString());
-
-                sentiments.add(sentiment);
-            }
-
-            Object sentimentSummary = SentimentIdentifier.instance().SummariseSentiments(sentiments);
-
-            viewTemplate.addAttribute("Sentiment",sentimentSummary);
-
-
-
-
         }
         catch (Exception e)
         {
@@ -58,7 +40,10 @@ public class UserSentimentToCompanyController {
         }
 
 
-        System.out.println(records.get(0).get(0).get("tweet"));
+        String text = records.get(0).get(0).get("tweet").asString();
+        System.out.println(text);
+        SentimentAnalyzer.classify(text);
+
 
         viewTemplate.addAttribute("data",records.get(0).get("t").get("tweet"));
         viewTemplate.addAttribute("company",company);
@@ -72,7 +57,5 @@ public class UserSentimentToCompanyController {
     }
 
 
-    private List<String> stripTweetText(List<Object> data){
-        return null;
-    }
+
 }

@@ -25,7 +25,7 @@ public class Database implements AutoCloseable{
         // make sure to change username to the name of a user profile you created in the DB,
         // BUT NOT "neo4j" as this is reserved user and will cause authentication error
         //same for password
-        driver = GraphDatabase.driver("bolt://localhost:11003", AuthTokens.basic("java_application", "12345"));
+        driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("java_application", "12345"));
     }
 
     /*DEPRECATED

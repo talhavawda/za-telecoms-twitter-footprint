@@ -1,9 +1,27 @@
 package groupproject.webinterface.model.sentiment;
 
-public class SentimentAnalyzer {
+import com.monkeylearn.MonkeyLearn;
+import com.monkeylearn.MonkeyLearnResponse;
+import com.monkeylearn.MonkeyLearnException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
-    //this method calls an external sentiment analysis API
-    public Object[] classify(String text){
-        return null;
+public class SentimentAnalyzer {
+    public static JSONArray classify(String data) {
+        JSONArray arrayResult = null;
+        try{
+            MonkeyLearn ml = new MonkeyLearn("7c78656cdf1c6331842074f08fecb05f33b59e1d");
+            String modelId = "cl_pi3C7JiL";
+            String[] dataArray = {data};
+            MonkeyLearnResponse res = ml.classifiers.classify(modelId, dataArray, false);
+            arrayResult = res.arrayResult;
+
+        }catch (MonkeyLearnException e){
+            e.printStackTrace();
+        }
+
+        System.out.println(arrayResult);
+        return arrayResult;
     }
+
 }
