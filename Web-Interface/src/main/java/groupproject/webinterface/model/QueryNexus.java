@@ -39,7 +39,6 @@ public class QueryNexus {
                         {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(u:user{username:$company}) return t"},
 
                 };
-
         queryTemplates = new HashMap<>();
         for (String[] pair:keysAndQueryBases){
             queryTemplates.put(pair[0],pair[1]);
