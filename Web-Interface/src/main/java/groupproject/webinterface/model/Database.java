@@ -1,6 +1,5 @@
 package groupproject.webinterface.model;
 
-import groupproject.webinterface.model.query.QueryBody;
 import org.neo4j.driver.*;
 
 
