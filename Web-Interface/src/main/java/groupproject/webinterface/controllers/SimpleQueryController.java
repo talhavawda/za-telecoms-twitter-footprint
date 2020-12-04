@@ -1,29 +1,24 @@
 package groupproject.webinterface.controllers;
 
 import groupproject.webinterface.model.Database;
-import groupproject.webinterface.model.QueryNexus;
-import groupproject.webinterface.model.query.QueryBody;
-import org.neo4j.driver.summary.ResultSummary;
+import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
+
 @Controller
 @CrossOrigin
 public class SimpleQueryController {
     @RequestMapping(value="/data", method = RequestMethod.GET)
     public String simple(Model viewTemplate){
+        List<Record> records = Database.instance().query("count_companies");
 
-        QueryBody query = new QueryBody(QueryNexus.get("proof") , new String[]{""});
 
-
-        Database database = Database.instance();
-
-        String q = (query.getFullQuery());
-
-        String result = database.queryAsRecordList(q).get(0).get(0)+"";
+        String result = records.get(0).get(0)+"";
 
         viewTemplate.addAttribute("data",result);
 

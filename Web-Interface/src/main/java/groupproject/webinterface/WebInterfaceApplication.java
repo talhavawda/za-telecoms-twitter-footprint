@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.data.neo4j.core.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 /*
 	The @SpringBootAnnotation is a convenience annotation that adds the following annotations:
