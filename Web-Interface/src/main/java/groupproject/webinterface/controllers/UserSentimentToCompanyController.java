@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -39,13 +41,27 @@ public class UserSentimentToCompanyController {
             e.printStackTrace();
         }
 
+        //sentiment analysis
+        ArrayList<String > classifications = new ArrayList<>();
+        for (Record record:records) {
+            String tweet = record.get(0).get("tweet").asString();
+            String current = SentimentAnalyzer.classify(tweet);
+            classifications.add(current);
+        }
 
-        String text = records.get(0).get(0).get("tweet").asString();
-        System.out.println(text);
-        SentimentAnalyzer.classify(text);
+        int Positives = Collections.frequency(classifications,"Positive");
+        int Neutrals = Collections.frequency(classifications,"Neutral");
+        int Negatives = Collections.frequency(classifications,"Negative");
 
 
-        viewTemplate.addAttribute("data",records.get(0).get("t").get("tweet"));
+
+
+        viewTemplate.addAttribute("positives",Positives+"");
+        viewTemplate.addAttribute("neutrals",Neutrals+"");
+        viewTemplate.addAttribute("negatives",Negatives+"");
+
+
+
         viewTemplate.addAttribute("company",company);
         viewTemplate.addAttribute("user",user);
 
