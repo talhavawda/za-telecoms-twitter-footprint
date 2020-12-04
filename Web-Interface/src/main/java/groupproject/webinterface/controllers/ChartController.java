@@ -1,16 +1,14 @@
 package groupproject.webinterface.controllers;
 
 import groupproject.webinterface.model.Database;
-import groupproject.webinterface.model.QueryNexus;
-import groupproject.webinterface.model.query.QueryBody;
+import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.neo4j.driver.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -24,18 +22,18 @@ public class ChartController {
         int[] counts = new int[companies.length];
 
         for (int i=0; i<companies.length; i++) {
-            QueryBody query = new QueryBody(QueryNexus.get("numtweetsbycompany") , new String[]{companies[i]});
 
             int result;
 
             try {
-                Database database = Database.instance();
+                HashMap<String , Object> params = new HashMap<>();
+                params.put("company",companies[i]);
+                List<Record> records = Database.instance().query("count_tweets_by_company",params);
 
-                String q = (query.getFullQuery());
-                result = database.queryAsRecordList(q).get(0).get(0).asInt();
+                result = records.get(0).get(0).asInt();
 
-
-            }catch (Exception e){
+            }
+            catch (Exception e){
                 e.printStackTrace();
                 result = -1;
             }
