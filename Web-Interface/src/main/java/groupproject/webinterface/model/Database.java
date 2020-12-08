@@ -3,6 +3,7 @@ package groupproject.webinterface.model;
 import org.neo4j.driver.*;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -28,6 +29,7 @@ public class Database implements AutoCloseable{
     }
 
     /*DEPRECATED
+
     causes ResultConsumedException
     as there is a limited time neo4j driver allows us to work on a result
 
@@ -48,19 +50,36 @@ public class Database implements AutoCloseable{
 
      */
 
-    public List<Record> queryAsRecordList(String q){
+
+    public List<Record> query(String templateKey, HashMap<String,Object> params){
+        Database database = Database.instance();
+
+
+        String template = QueryNexus.getQueryTemplate(templateKey);
+        Query query = new Query(template,params);
         try ( Session session = driver.session() )
         {
-            Query query = new Query(q);
-
             Result result = session.run(query);
 
             return result.list();
-
-
         }
-
     }
+    public List<Record> query(String templateKey){
+        Database database = Database.instance();
+        String template = QueryNexus.getQueryTemplate(templateKey);
+        Query query = new Query(template);
+        try ( Session session = driver.session() )
+        {
+            Result result = session.run(query);
+
+            return result.list();
+        }
+    }
+
+
+
+
+
 
     @Override
     public void close() throws Exception {

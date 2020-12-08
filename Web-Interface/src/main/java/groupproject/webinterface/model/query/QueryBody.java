@@ -1,5 +1,11 @@
 package groupproject.webinterface.model.query;
 
+/*
+DO NOT USE:
+THE FUNCTIONALITY OF THIS CLASS IS AVAILABLE BY DEFAULT
+WITHIN THE Query CLASS OF THE NEO4J DRIVER.
+
+
 public class QueryBody {
     String baseQuery;
     Object[] params;
@@ -25,3 +31,6 @@ public class QueryBody {
         return String.format(baseQuery, params);
     }
 }
+
+
+ */

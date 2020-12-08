@@ -3,8 +3,8 @@ package groupproject.webinterface;
 import groupproject.webinterface.model.Database;
 import groupproject.webinterface.model.QueryNexus;
 import org.springframework.boot.SpringApplication;
-import org.springframework.data.neo4j.core.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 
 /*
@@ -22,9 +22,9 @@ public class WebInterfaceApplication {
 		//run
 		SpringApplication.run(WebInterfaceApplication.class, args); //launch the server
 
+
+		//set up singletons
 		QueryNexus.initQueryNexus();
-
-
 		Database db = null;
 
 		try {
@@ -32,6 +32,9 @@ public class WebInterfaceApplication {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+
+
 
 /*
 

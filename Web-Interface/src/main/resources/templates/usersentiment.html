@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sentiment</title>
+</head>
+<body>
+
+    <div>
+        given a user and a company this page shows the sentiment of the user to the company
+    </div>
+
+    <div>
+        these are the available thymeleaf parameters given by the controller:
+
+        <p th:text="${user}"></p>
+        <p th:text="${company}"></p>
+
+
+
+        <div>
+            num positive interactions:
+            <p th:text="${positives}"></p>
+        </div>
+
+        <div>
+            num neutral interactions:
+            <p th:text="${neutrals}"></p>
+
+        </div>
+
+
+        <div>
+            num negative interactions:
+            <p th:text="${negatives}"></p>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+</html>
