@@ -1,0 +1,71 @@
+body {
+    background-color: #fff;
+    font-family: Rubik, Arial;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+main h1 {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 55px;
+    margin-top: 0px;
+    padding-top: 80px;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 940px;
+    margin: 0 0;
+    padding: 0 10px;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.jumbotron {
+    height: 800px;
+    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('https://dist.neo4j.com/wp-content/uploads/2014/07/Neo4j-Twitter-Graph-Visualization-1.png?_gl=1*uns1px*_ga*MTgwNDExNDk4NS4xNjA2NTY3ODA0*_ga_DL38Q8KGQC*MTYwNjk5NzEyMC4xMi4wLjE2MDY5OTcxMjAuMA..&_ga=2.156905662.481958872.1606997124-1804114985.1606567804');
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.btn-main {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    padding: 16px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-style: solid;
+}
+
+.btn-default {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-style: solid;
+}
