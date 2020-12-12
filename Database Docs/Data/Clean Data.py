@@ -1,6 +1,6 @@
 import pandas as pd
 
-data_frame = pd.read_csv("keywords.csv")
+data_frame = pd.read_csv("old_keywords.csv")
 print(data_frame)
 accounts = ["telkomza", "rainsouthafrica", "afrihost", "mtnza"]
 entries=[]
@@ -10,4 +10,4 @@ for index, row in data_frame.iterrows():
         entries.append(index)
 df = data_frame.drop(entries)
 print(df)
-df.to_csv(r'C:\Users\Ahmad Jawaad Shah\Desktop\Twitter Data\updated_keywords.csv')
+df.to_csv(r'C:\Users\Ahmad Jawaad Shah\Desktop\Twitter Data\keywords.csv')
