@@ -36,7 +36,15 @@ public class QueryNexus {
                         //with some params
                         {"count_tweets_by_company", "MATCH (company{username:$company})--(tweet) RETURN count(tweet)"},
 
-                        {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(u:user{username:$company}) return t"},
+                        {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) return t"},
+
+                        //general sentiment
+
+                        //after lockdown
+                        {"company_general_sentiment_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return t"},
+                        //before lockdown
+                        {"company_general_sentiment_before","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date<date({year:2020, month:03, day:27})) return t"},
+
 
                 };
         queryTemplates = new HashMap<>();
