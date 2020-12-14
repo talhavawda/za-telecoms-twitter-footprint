@@ -1,0 +1,47 @@
+Our data is static, so we can know what to expect. The idea i have in
+mind is to query the database, return either a visual graph or a table.
+We can then explain the results in detail and assess the situation. 
+We can brainstorm ideas as to why the outcome is a specific way 
+and what can the company do to improve.
+The Database Queries/Queries to Database folder contains some queries
+that we can build on
+
+Basic
+	1. Number of tweets from a company from before and during the 
+	pandemic. (Can Compare the number of tweets and whether they
+	were more "active" or not)
+	
+	2. Top 10 most popular Hashtags used in tweets.
+	Can take this idea further i.e. check the top 10 used by users
+	and the top 10 used by companies and see if there is any 
+	correlation. Explain why or why not
+
+	3. Count the number of tweets aimed at a company. Compare
+	the time period before and during the pandemic. (Less users
+	tweeting => improvement in company services?)
+
+	4. Top 10 most mentioned users. (From the query i've run,
+	it looks like theres other companies such as Vodacom, Vumatel
+	etc. Maybe we can discuss why they are being mentioned?)
+
+
+Advanced
+
+	1. Get a handful of tweets aimed at a company. Do sentiment
+	analysis and display an average based on the tweets we have
+	seen. How good is the rating? (Along the lines of having a
+	sample population and doing some stats)
+
+	2. Enter a users username. Get their tweets that they've
+	tweeted to the companies. Display the tweets together with
+	a sentiment and a comment. (How a specific user feels)
+
+	3. We used keywords to extract data from Twitter.
+	Perhaps we can filter tweets based on those keywords as well 
+	and draw up some conclusion.
+		Suppose we interested in "Online Learning", then 
+		we filter and do some sentiment analysis?
+		Filter users tweets? Filter the Companies Tweets?
+		See how the users felt towards that topic
+		See how the Company used their platform to 
+		address the topic
