@@ -29,17 +29,19 @@ public class QueryNexus {
 
                         {"all", "match(n) return(n)"},
 
+                                //in general , for all companies, users
                         {"tweets_before_lockdown", "match(t:tweet) WHERE t.date<date({year:2020, month:03, day:27}) return t"},
-
                         {"tweets_since_lockdown", "match(t:tweet) WHERE t.date>=date({year:2020, month:03, day:27}) return t"},
 
                         //with some params
+                        //num tweets by companies
                         {"count_tweets_by_company", "MATCH (company{username:$company})--(tweet) RETURN count(tweet)"},
+                        {"count_tweets_by_company_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return count(t)"},
+                        {"count_tweets_by_company_before","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date<date({year:2020, month:03, day:27})) return count(t)"},
 
+                        //sentiment
                         {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) return t"},
-
                         //general sentiment
-
                         //after lockdown
                         {"company_general_sentiment_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return t"},
                         //before lockdown
