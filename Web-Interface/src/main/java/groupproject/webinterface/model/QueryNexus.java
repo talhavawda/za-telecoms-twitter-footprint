@@ -36,13 +36,19 @@ public class QueryNexus {
                         //with some params
 
 
+
+
+
                         //num tweets by companies
                         {"count_tweets_by_company", "MATCH (company{username:$company})--(t:tweet) RETURN count(t)"},
                         {"count_tweets_by_company_after", "MATCH (company{username:$company})--(t:tweet) where(t.date>=date({year:2020, month:03, day:27})) RETURN count(t)"},
                         {"count_tweets_by_company_before", "MATCH (company{username:$company})--(t:tweet) where(t.date<date({year:2020, month:03, day:27})) RETURN count(t)"},
 
 
-                        //mentions
+
+
+
+                        //mentions of companies
                             // as tweets
                         {"tweets_mention_company_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return t"},
                         {"tweets_mention_company_before","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date<date({year:2020, month:03, day:27})) return t"},
@@ -50,8 +56,20 @@ public class QueryNexus {
                         {"tweets_mention_company_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return count(t)"},
                         {"tweets_mention_company_before","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date<date({year:2020, month:03, day:27})) return count(t)"},
 
+
+
+
+                        //mentions of users (top 10 most frequent)
+                        {"frequent_user_mentions","Match(u:user)-[i:IS_MENTIONED_IN]-(:tweet) RETURN DISTINCT u.username as name ,count(i) as count ORDER BY count(i) DESC LIMIT 10"},
+
+
+
+
+
+
                         //sentiment
                         {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) return t"},
+
 
                         //general sentiment
                         //after lockdown
