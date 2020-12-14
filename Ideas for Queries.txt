@@ -18,6 +18,7 @@ Basic
 	and the top 10 used by companies and see if there is any 
 	correlation. Explain why or why not
 
+	<done>
 	3. Count the number of tweets aimed at a company. Compare
 	the time period before and during the pandemic. (Less users
 	tweeting => improvement in company services?)
