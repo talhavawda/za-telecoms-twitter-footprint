@@ -34,6 +34,8 @@ public class QueryNexus {
                         {"tweets_since_lockdown", "match(t:tweet) WHERE t.date>=date({year:2020, month:03, day:27}) return t"},
 
                         //with some params
+
+
                         //num tweets by companies
                         {"count_tweets_by_company", "MATCH (company{username:$company})--(tweet) RETURN count(tweet)"},
                         {"count_tweets_by_company_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return count(t)"},
@@ -41,11 +43,25 @@ public class QueryNexus {
 
                         //sentiment
                         {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) return t"},
+
                         //general sentiment
                         //after lockdown
                         {"company_general_sentiment_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return t"},
                         //before lockdown
                         {"company_general_sentiment_before","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date<date({year:2020, month:03, day:27})) return t"},
+
+
+
+
+                        //most frequent hashtags
+                        //general
+                        {"frequent_hashtags_all","Match(n:hashtag)-[t:USES_HASHTAG]-(:tweet) RETURN DISTINCT n.name as name ,count(t) as count ORDER BY count(t) DESC LIMIT 10"},
+                        //user
+                        {"frequent_hashtags_user","Match(n:hashtag)-[t:USES_HASHTAG]-(:tweet)-[:TWEETED]-(:user) RETURN DISTINCT n.name as name ,count(t) as count ORDER BY count(t) DESC LIMIT 10"},
+                        //company
+                        {"frequent_hashtags_company","Match(n:hashtag)-[t:USES_HASHTAG]-(:tweet)-[:TWEETED]-(:company) RETURN DISTINCT n.name as name ,count(t) as count ORDER BY count(t) DESC LIMIT 10"},
+
+
 
 
                 };
