@@ -29,6 +29,7 @@ public class GeneralCompanySentimentController {
         HashMap<String,Object> params = new HashMap<>();
         params.put("company",company);
 
+
         int[] befores = templateToSentimentCounts("company_general_sentiment_before",params);
         int[] afters = templateToSentimentCounts("company_general_sentiment_after",params);
 
@@ -40,6 +41,8 @@ public class GeneralCompanySentimentController {
         viewTemplate.addAttribute("afterPositives",afters[0]+"");
         viewTemplate.addAttribute("afterNeutrals",afters[1]+"");
         viewTemplate.addAttribute("afterNegatives",afters[2]+"");
+
+
 
 
         viewTemplate.addAttribute("company",company);
