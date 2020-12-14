@@ -45,7 +45,7 @@ public class ChartController {
 
 
 
-        viewTemplate.addAttribute("test","iamatest");
+       // viewTemplate.addAttribute("test","iamatest");
 
 
 

@@ -17,20 +17,17 @@
             <div class="jumbotron"></div>
             <div class="container">
                 <h1>Quantifying and classifying the Digital (Social Media) Footprint of South African Telecommunications companies before and during the Covid-19 pandemic</h1>
-                <a href="ChooseQueries.html" class="btn-main"> Get Started </a>
+                <a href="javascript:click()" class="btn-main"> Get Started </a>
             </div>
         </main>
-    <p>
-        note from Shaelin:
-        no javascript scripting to navigate between endpoints have been added to this page yet.
 
-        to check that the numtweets endpoint works type a URL like
-        "http://localhost:8080/numtweets?company=Telkom"
-        or
-        "http://localhost:8080/numtweets?company=Rain"
 
-    </p>
 
+<script th:inline="javascript">
+    function click(){
+        window.location.href = "/choose"
+    }
+</script>
 </body>
 
 </html>

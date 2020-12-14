@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Choose A Query</title>
@@ -15,13 +15,27 @@
                     <label for="query">Select a query from the drop down menu<br></label>
                     <select name="query" id="query" onchange="la(this.value)">
                         <option value="#">Select A Query</option>
-                        <option value="http://localhost:8080/chart">Chart Page</option>
-                        <option value="SimpleQuery.html">SimpleQuery Page</option>
-                        <option value="index.html">Back</option>
+                        <option value="javascript:gotoChart()">Chart Page</option>
+                        <option value="javascript:gotoSimple()">SimpleQuery Page</option>
+                        <option value="javascript:gotoIndex()">Back</option>
                     </select>
                 </section>
             </div>
         </section>
     </div>
+
+<script th:inline = "javascript">
+    function gotoChart(){
+        window.location.href = "/chart";
+    }
+
+     function gotoSimple(){
+        window.location.href = "/data";
+    }
+
+     function gotoIndex(){
+        window.location.href = "/";
+    }
+</script>
 </body>
 </html>
