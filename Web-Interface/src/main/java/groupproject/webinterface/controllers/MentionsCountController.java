@@ -15,40 +15,23 @@ import java.util.List;
 
 @Controller
 @CrossOrigin
-public class NumTweetsController {
-    @RequestMapping(value="/numtweets", method = RequestMethod.GET)
-    public String numTweets(@RequestParam(value="company") String company, Model viewTemplate){
+public class MentionsCountController {
+    @RequestMapping(value="/mentions", method = RequestMethod.GET)
+    public String mentions(@RequestParam(value="company") String company, Model viewTemplate){
         HashMap<String, Object> params = new HashMap<>();
         params.put("company", company);
 
         viewTemplate.addAttribute("company",company);
-        String before = CountHandler.getCountFromTemplateKey("count_tweets_by_company_before",params);
-        String after = CountHandler.getCountFromTemplateKey("count_tweets_by_company_after",params);
+        String before = CountHandler.getCountFromTemplateKey("tweets_mention_company_before",params);
+        String after = CountHandler.getCountFromTemplateKey("tweets_mention_company_after",params);
         String total = Integer.toString(Integer.parseInt(before) + Integer.parseInt(after));
 
         viewTemplate.addAttribute("countbefore",before);
         viewTemplate.addAttribute("countafter",after);
         viewTemplate.addAttribute("count",total);
 
-        return "numtweets";
+        return "mentions";
     }
 
-    /*
-    moved to CountHandler
-    private String getCountFrosmTemplateKey(String templateKey,HashMap<String, Object> params){
-        String result;
-        try {
-            List<Record> records = Database.instance().query(templateKey,params);
-            result = records.get(0).get(0)+"";
 
-        }
-        catch (Exception e){
-            e.printStackTrace();
-            result = "something went wrong";
-        }
-
-        return result;
-    }
-
-     */
 }
