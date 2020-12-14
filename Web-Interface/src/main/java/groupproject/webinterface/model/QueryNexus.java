@@ -42,11 +42,13 @@ public class QueryNexus {
                         {"count_tweets_by_company_before", "MATCH (company{username:$company})--(t:tweet) where(t.date<date({year:2020, month:03, day:27})) RETURN count(t)"},
 
 
-
-
                         //mentions
+                            // as tweets
                         {"tweets_mention_company_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return t"},
                         {"tweets_mention_company_before","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date<date({year:2020, month:03, day:27})) return t"},
+                            // as counts
+                        {"tweets_mention_company_after","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date>=date({year:2020, month:03, day:27})) return count(t)"},
+                        {"tweets_mention_company_before","match(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) where(t.date<date({year:2020, month:03, day:27})) return count(t)"},
 
                         //sentiment
                         {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) return t"},
