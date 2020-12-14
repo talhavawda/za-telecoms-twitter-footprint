@@ -7,19 +7,23 @@ The Database Queries/Queries to Database folder contains some queries
 that we can build on
 
 Basic
+	<done>
 	1. Number of tweets from a company from before and during the 
 	pandemic. (Can Compare the number of tweets and whether they
-	were more "active" or not)
+	were more "active" or not) 
 	
+	<done>
 	2. Top 10 most popular Hashtags used in tweets.
 	Can take this idea further i.e. check the top 10 used by users
 	and the top 10 used by companies and see if there is any 
 	correlation. Explain why or why not
 
+	<done>
 	3. Count the number of tweets aimed at a company. Compare
 	the time period before and during the pandemic. (Less users
 	tweeting => improvement in company services?)
 
+	<done>
 	4. Top 10 most mentioned users. (From the query i've run,
 	it looks like theres other companies such as Vodacom, Vumatel
 	etc. Maybe we can discuss why they are being mentioned?)
