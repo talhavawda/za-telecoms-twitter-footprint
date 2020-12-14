@@ -7,10 +7,12 @@ The Database Queries/Queries to Database folder contains some queries
 that we can build on
 
 Basic
+	<done>
 	1. Number of tweets from a company from before and during the 
 	pandemic. (Can Compare the number of tweets and whether they
-	were more "active" or not)
+	were more "active" or not) 
 	
+	<done>
 	2. Top 10 most popular Hashtags used in tweets.
 	Can take this idea further i.e. check the top 10 used by users
 	and the top 10 used by companies and see if there is any 
