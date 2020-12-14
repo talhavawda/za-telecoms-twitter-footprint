@@ -23,6 +23,7 @@ Basic
 	the time period before and during the pandemic. (Less users
 	tweeting => improvement in company services?)
 
+	<done>
 	4. Top 10 most mentioned users. (From the query i've run,
 	it looks like theres other companies such as Vodacom, Vumatel
 	etc. Maybe we can discuss why they are being mentioned?)
