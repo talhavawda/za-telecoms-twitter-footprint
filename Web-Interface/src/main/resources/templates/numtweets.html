@@ -12,38 +12,14 @@
     </style>
 
     <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+    <script src="/scripts/NeoVisAccessor.js"></script>
+
 </head>
 
-<script type="text/javascript">
-    function draw() {
-        var config ={
-            container_id: "viz",
-            server_url: "bolt://localhost:7687",
-            server_user: "java_application",
-            server_password: "12345",
-            labels: {
-                "tweet": {
-                    tweet: "tweet"
-                },
-                "company":{
-                    username: "username"
-                }
-            },
-            relationships: {
-                "TWEETED":{
-                    caption: false
-                }
-            },
-            initial_cypher: 'MATCH p = (c:company)--[:TWEETED]->(t:tweet) RETURN p'
-        }
 
-        var viz = new NeoVis.default(config);
-        viz.render();
-    }
 
-</script>
 
-<body onload="draw()">
+<body th:onload="draw([[${company}]])">
 
     <div id = "viz"></div>
 
