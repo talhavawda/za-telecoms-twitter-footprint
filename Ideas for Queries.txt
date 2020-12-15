@@ -46,10 +46,16 @@ Advanced
 	analysis and display an average based on the tweets we have
 	seen. How good is the rating? (Along the lines of having a
 	sample population and doing some stats)
+MATCH (c:company{username:'afrihost'})-[:IS_MENTIONED_IN]->(t:tweet)
+RETURN c,t
+LIMIT 100
 
 	2. Enter a users username. Get their tweets that they've
 	tweeted to the companies. Display the tweets together with
 	a sentiment and a comment. (How a specific user feels)
+This gets all the tweets from a specific user to all the companies
+MATCH (u:user{username:"mtnzaservice"})-[:TWEETED]->(t:tweet)
+RETURN u, t
 
 	3. We used keywords to extract data from Twitter.
 	Perhaps we can filter tweets based on those keywords as well 
@@ -60,3 +66,27 @@ Advanced
 		See how the users felt towards that topic
 		See how the Company used their platform to 
 		address the topic
+A nice graph where tweets from users on the keyword exam is show. Also
+links it to the company they at'ed
+MATCH (u:user)-[:TWEETED]->(t:tweet)<-[:IS_MENTIONED_IN]-(c:company)
+with u, t, split(t.tweet, " ") as words, c
+UNWIND words as word
+with u, t, word,c
+where word = 'exam'
+RETURN u, t, c
+
+The companies response
+MATCH (c:company)-[:TWEETED]->(t:tweet)
+with t, split(t.tweet, " ") as words, c
+UNWIND words as word
+with t, word,c
+where word = 'exam'
+RETURN t, c
+
+Users tweets on that topic
+MATCH (u:user)-[:TWEETED]->(t:tweet)
+with t, split(t.tweet, " ") as words, u
+UNWIND words as word
+with t, word,u
+where word = 'exam'
+RETURN t, u
