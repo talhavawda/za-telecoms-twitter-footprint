@@ -22,11 +22,12 @@
                         <option value="javascript:gotoIndex()">Back</option>
                     </select>
                 </section>
+
                 <div id="hish" class="btn-numtweet">
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=telkomza';">Telkom</button>
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=rainsouthafrica';">Rain</button>
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=afrihost';">Afrihost</button>
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=mtnza';">MTN</button>
+                    <button onclick="javascript:gotoNumTweets('telkomza')">Telkom</button>
+                    <button onclick="javascript:gotoNumTweets('rainsouthafrica')">Telkom</button>
+                    <button onclick="javascript:gotoNumTweets('afrihost')">Telkom</button>
+                    <button onclick="javascript:gotoNumTweets('mtnza')">Telkom</button>
                 </div>
             </div>
         </section>
@@ -40,7 +41,6 @@
     </script>
 
     <script th:inline = "javascript">
-        var company = "";
         function gotoChart(){
             window.location.href = "/chart";
         }
@@ -53,10 +53,11 @@
             window.location.href = "/";
         }
 
-         function gotoNumTweets(){
+         function gotoNumTweets(company){
             window.location.href = "/numtweets?company="+company;
         }
 
     </script>
+
 </body>
 </html>
