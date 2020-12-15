@@ -5,10 +5,11 @@
     <title>Choose A Query</title>
     <link href="style/choosestyle.css" rel="stylesheet" type="text/css"/>
     <script type= "text/javascript" src="choosemenu.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>What Queries would you like to see?</h1>
+        <h1>SELECT A QUERY </h1>
         <section class="supporting">
             <div class="col">
                 <section class="dropdown">
@@ -17,11 +18,25 @@
                         <option value="#">Select A Query</option>
                         <option value="http://localhost:8080/chart">Chart Page</option>
                         <option value="SimpleQuery.html">SimpleQuery Page</option>
+                        <option value="#" id = "useropt">Number of tweets: </option>
                         <option value="index.html">Back</option>
                     </select>
                 </section>
+                <div id="hish" class="btn-numtweet">
+                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=telkomza';">Telkom</button>
+                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=rainsouthafrica';">Rain</button>
+                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=afrihost';">Afrihost</button>
+                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=mtnza';">MTN</button>
+                </div>
             </div>
         </section>
     </div>
+    <script>
+        $(document).ready(function(){
+            $("#useropt").click(function(){
+                $("#hish").toggle();
+            });
+        });
+    </script>
 </body>
 </html>

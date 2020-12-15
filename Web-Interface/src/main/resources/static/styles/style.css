@@ -53,6 +53,8 @@ main h1 {
     font-size: 18px;
     letter-spacing: 1.3px;
     padding: 16px 40px;
+    margin-right: 5px;
+    margin-left: 10px;
     text-decoration: none;
     text-transform: uppercase;
     border-style: solid;
