@@ -159,11 +159,15 @@ footer p {
 .dropdown{
     margin-top: 75px;
     width: 500px;
-    height: 500px;
+    height: 300px;
 }
 
 #query{
     width: 500px;
     height: 60px;
     text-align:center;
+}
+
+.btn-numtweet{
+    display: none;
 }
