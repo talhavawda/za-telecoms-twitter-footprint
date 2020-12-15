@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Choose A Query</title>
@@ -16,17 +16,18 @@
                     <label for="query">Select a query from the drop down menu<br></label>
                     <select name="query" id="query" onchange="la(this.value)">
                         <option value="#">Select A Query</option>
-                        <option value="http://localhost:8080/chart">Chart Page</option>
-                        <option value="SimpleQuery.html">SimpleQuery Page</option>
+                        <option value="javascript:gotoChart()">Chart Page</option>
+                        <option value="javascript:gotoSimple()">SimpleQuery Page</option>
                         <option value="#" id = "useropt">Number of tweets: </option>
-                        <option value="index.html">Back</option>
+                        <option value="javascript:gotoIndex()">Back</option>
                     </select>
                 </section>
+
                 <div id="hish" class="btn-numtweet">
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=telkomza';">Telkom</button>
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=rainsouthafrica';">Rain</button>
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=afrihost';">Afrihost</button>
-                    <button onclick="window.location.href='http://localhost:8080/numtweets?company=mtnza';">MTN</button>
+                    <button onclick="javascript:gotoNumTweets('telkomza')">Telkom</button>
+                    <button onclick="javascript:gotoNumTweets('rainsouthafrica')">Telkom</button>
+                    <button onclick="javascript:gotoNumTweets('afrihost')">Telkom</button>
+                    <button onclick="javascript:gotoNumTweets('mtnza')">Telkom</button>
                 </div>
             </div>
         </section>
@@ -38,5 +39,25 @@
             });
         });
     </script>
+
+    <script th:inline = "javascript">
+        function gotoChart(){
+            window.location.href = "/chart";
+        }
+
+         function gotoSimple(){
+            window.location.href = "/data";
+        }
+
+        function gotoIndex(){
+            window.location.href = "/";
+        }
+
+         function gotoNumTweets(company){
+            window.location.href = "/numtweets?company="+company;
+        }
+
+    </script>
+
 </body>
 </html>
