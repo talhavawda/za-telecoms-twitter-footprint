@@ -17,16 +17,27 @@ Basic
 	Can take this idea further i.e. check the top 10 used by users
 	and the top 10 used by companies and see if there is any 
 	correlation. Explain why or why not
+MATCH (c:company{username:'mtnza'})-[tw:TWEETED]->(t:tweet)-[:USES_HASHTAG]->(h:hashtag)
+RETURN c, h,Count(t) AS used
+Order by used DESC
+LIMIT 10
 
 	<done>
 	3. Count the number of tweets aimed at a company. Compare
 	the time period before and during the pandemic. (Less users
 	tweeting => improvement in company services?)
+MATCH (u:user)-[r:TWEETED]->(t:tweet)<-[:IS_MENTIONED_IN]-(c:company{username:"mtnza"})
+RETURN u, r, t, c
+LIMIT 100
 
 	<done>
 	4. Top 10 most mentioned users. (From the query i've run,
 	it looks like theres other companies such as Vodacom, Vumatel
 	etc. Maybe we can discuss why they are being mentioned?)
+MATCH (u:user)-[:IS_MENTIONED_IN]->(t:tweet)
+RETURN u, Count(t) AS mentions
+Order by mentions DESC
+LIMIT 10
 
 
 Advanced
