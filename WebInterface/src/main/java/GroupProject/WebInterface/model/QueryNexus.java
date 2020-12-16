@@ -94,7 +94,7 @@ public class QueryNexus {
                 };
 
         queryTemplates = new HashMap<>();
-        
+
         for (String[] pair:keysAndQueryBases){
             queryTemplates.put(pair[0],pair[1]);
         }
