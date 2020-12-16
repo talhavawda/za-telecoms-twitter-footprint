@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @CrossOrigin
 public class FrequentlyMentionedUserController {
-    @RequestMapping(value="/freqmentionedusers", method = RequestMethod.GET)
+    @RequestMapping(value="/freqmentioneduser", method = RequestMethod.GET)
     public String hashtags(Model viewTemplate){
 
         templateKeytoAttributeAdded("frequent_user_mentions",viewTemplate);
