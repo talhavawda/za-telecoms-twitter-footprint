@@ -13,12 +13,24 @@ import java.util.List;
  * */
 public class Database implements AutoCloseable{
 
-    private static Database database;
+    private static Database database = null;
     private Driver driver;
 
     private Database() {
         connect();
     }
+
+    /*
+	Singleton application
+ */
+    public static Database instance() {
+        if (database == null ) {
+            database = new Database();
+        }
+
+        return database;
+    }
+
 
     public void connect(){
 
@@ -87,15 +99,6 @@ public class Database implements AutoCloseable{
     }
 
 
-    /*
-        Singleton application
-     */
-    public static Database instance() {
-        if (database == null ) {
-            database = new Database();
-        }
 
-        return database;
-    }
 
 }
