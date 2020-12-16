@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>general Sentiment</title>
+    <style type="text/css">
+        #viz{
+            width: 900px;
+            height: 500px;
+        }
+    </style>
+
+    <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+
+
+
+<body >
+
+    <div id="heading">
+        <h1>sentiment of interactions with </h1>
+    </div>
+
+    <div id="company">
+        <h1 th:text="${company}"></h1>
+    </div>
+
+    <div id="piechartBefore"></div>
+    <div id="piechartAfter"></div>
+
+
+    <div id="counts">
+    <div id="countbefore">
+        <div>
+            num positive interactions:
+            <p th:text="${beforePositives}"></p>
+        </div>
+
+        <div>
+            num neutral interactions:
+            <p th:text="${beforeNeutrals}"></p>
+
+        </div>
+
+
+        <div>
+            num negative interactions:
+            <p th:text="${beforeNegatives}"></p>
+
+        </div>
+    </div>
+
+    <div id="countafter">
+
+        <div>
+            num positive interactions:
+            <p th:text="${afterPositives}"></p>
+        </div>
+
+        <div>
+            num neutral interactions:
+            <p th:text="${afterNeutrals}"></p>
+
+        </div>
+
+
+        <div>
+            num negative interactions:
+            <p th:text="${afterNegatives}"></p>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script th:inline="javascript">
+    var bG = parseInt([[${beforePositives}]]);
+    var bN = parseInt([[${beforeNeutrals}]]);
+    var bB = parseInt([[${beforeNegatives}]]);
+
+    var aG = parseInt([[${afterPositives}]]);
+    var aN = parseInt([[${afterNeutrals}]]);
+    var aB = parseInt([[${afterNegatives}]]);
+
+    console.log(aG+0+0+0+0+0);
+    console.log(aN+0+0+0+0+0);
+    console.log(aB+0+0+0+0+0);
+
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+
+
+    function drawChart() {
+        var beforeData = google.visualization.arrayToDataTable([
+            ['Sentiment', 'Amount'],
+            ['Positive', bG],
+            ['Neutral', bN],
+            ['Negative', bB],
+        ]);
+        var afterData = google.visualization.arrayToDataTable([
+            ['Sentiment', 'Amount'],
+            ['Positive', aG],
+            ['Neutral', aN],
+            ['Negative', aB],
+
+        ]);
+
+        var DUMMYData = google.visualization.arrayToDataTable([
+            ['Sentiment', 'Amount'],
+            ['Positive', 0],
+            ['Neutral', 20],
+            ['Negative', 40],
+        ]);
+        var p1_options = {'title':'Sentiment of Interaction Before Lockdown', 'width':650, 'height':600, backgroundColor: '#EEEEEE'};
+        var p2_options = {'title':'Sentiment of Interaction After Lockdown', 'width':650, 'height':600, backgroundColor: '#EEEEEE'};
+
+        var p1chart = new google.visualization.PieChart(document.getElementById('piechartBefore'));
+        var p2chart = new google.visualization.PieChart(document.getElementById('piechartAfter'));
+
+
+        p1chart.draw(beforeData, p1_options);
+        p2chart.draw(afterData, p2_options);
+    }
+</script>
+
+
+</body>
+</html>
