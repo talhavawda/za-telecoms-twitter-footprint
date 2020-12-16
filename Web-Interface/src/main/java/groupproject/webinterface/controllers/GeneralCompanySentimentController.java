@@ -1,7 +1,7 @@
 package groupproject.webinterface.controllers;
 
 import groupproject.webinterface.model.Database;
-import groupproject.webinterface.model.sentiment.SentimentAnalyzer;
+import groupproject.webinterface.model.sentiment.SentimentEngine;
 import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +20,7 @@ import java.util.List;
 @CrossOrigin
 public class GeneralCompanySentimentController {
     @RequestMapping(value="/generalsentiment", method = RequestMethod.GET)
-    public String generalSentiment(@RequestParam(value="company") String company, Model viewTemplate) {
+    public String generalSentiment(@RequestParam(value="company") String company, @RequestParam(value="sample") int sample, Model viewTemplate) {
 
         /*
         localhost:8080/generalsentiment?company=____
@@ -30,8 +30,11 @@ public class GeneralCompanySentimentController {
         params.put("company",company);
 
 
-        int[] befores = templateToSentimentCounts("company_general_sentiment_before",params);
-        int[] afters = templateToSentimentCounts("company_general_sentiment_after",params);
+        System.out.println("analysing tweets before lockdown");
+        int[] befores = templateToSentimentCounts("company_general_sentiment_before",params, sample);
+
+        System.out.println("analysing tweets before after");
+        int[] afters = templateToSentimentCounts("company_general_sentiment_after",params, sample);
 
 
         viewTemplate.addAttribute("beforePositives",befores[0]+"");
@@ -51,7 +54,7 @@ public class GeneralCompanySentimentController {
     }
 
 
-    private int[] templateToSentimentCounts(String templateKey, HashMap<String,Object> params){
+    private int[] templateToSentimentCounts(String templateKey, HashMap<String,Object> params, int sample){
         List<Record> Records = null;
 
         try{
@@ -62,20 +65,25 @@ public class GeneralCompanySentimentController {
         {
             e.printStackTrace();
         }
-        ArrayList<String > Classifications = new ArrayList<>();
+
+
+        //put each tweet as a string into a list
+        ArrayList<String > tweetTexts = new ArrayList<>();
         for (Record record:Records) {
             String tweet = record.get(0).get("tweet").asString();
-            String current = SentimentAnalyzer.classify(tweet);
-            Classifications.add(current);
+            tweetTexts.add(tweet);
         }
+
+
+        SentimentEngine engine = new SentimentEngine();
+        ArrayList<String> Classifications = engine.concatAndJudgeStrings(tweetTexts, sample);
 
 
         int Positives = Collections.frequency(Classifications,"Positive");
         int Neutrals = Collections.frequency(Classifications,"Neutral");
         int Negatives = Collections.frequency(Classifications,"Negative");
 
-        int[] result = {Positives, Neutrals, Negatives};
-        return result;
+        return new int[]{Positives, Neutrals, Negatives};
     }
 
 
