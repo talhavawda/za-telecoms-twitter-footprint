@@ -1,0 +1,13 @@
+this is a record of all design patterns we used. if any are missing please add them in
+
+
+MVC
+
+Pipeline (see SentimentEngine.initPipeline)
+
+Builder (see SentimentEngine.listToSentences)
+
+Singleton (see Database)
+
+
+Prototype (see QueryNexus, but I don't think its a good implementation of it)
