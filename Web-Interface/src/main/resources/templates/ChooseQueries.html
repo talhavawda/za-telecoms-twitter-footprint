@@ -17,7 +17,10 @@
                         <option value="#">Select A Query</option>
                         <option value="javascript:gotoChart()">Chart Page</option>
                         <option value="javascript:gotoSimple()">SimpleQuery Page</option>
-                        <option value="#" id = "useropt">Number of tweets: </option>
+                        <option value="#" id = "useropt">Number of tweets </option>
+                        <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
+                        <option value="javascript:gotoHashtags()" id = "useropt2">Popular Hashtags</option>
+                        <option value="#" id = "useropt3">Number of tweets: </option>
                         <option value="javascript:gotoIndex()">Back</option>
 
                     </select>
@@ -44,14 +47,6 @@
     </script>
 
     <script th:inline = "javascript">
-        $(document).ready(function(){
-            $("#useropt").click(function(){
-                $("#hish").toggle();
-            });
-        });
-    </script>
-
-    <script th:inline = "javascript">
         function gotoChart(){
             window.location.href = "/chart";
         }
@@ -66,6 +61,13 @@
 
          function gotoNumTweets(company){
             window.location.href = "/numtweets?company="+company;
+        }
+
+        function gotoFreqUser() {
+            window.location.href = "/freqmentioneduser";
+        }
+        function gotoHashtags(){
+            window.location.href = "/hashtags";
         }
 
     </script>
