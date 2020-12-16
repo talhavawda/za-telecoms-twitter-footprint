@@ -25,7 +25,7 @@ public class QueryNexus {
         String[][] keysAndQueryBases =
                 {
                         //with no params
-                        {"count_companies", "MATCH (n:company) RETURN count(n) as count"},
+                        {"companies", "MATCH (n:company) RETURN n"},
 
                         {"all", "match(n) return(n)"},
 
