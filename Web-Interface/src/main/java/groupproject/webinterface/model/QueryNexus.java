@@ -69,7 +69,7 @@ public class QueryNexus {
 
                         //sentiment
                         {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) return t"},
-
+                        {"tweets_all_by_user", "match(user{username:$user})-[:TWEETED]-(t:tweet) return t"},
 
                         //general sentiment
                         //after lockdown

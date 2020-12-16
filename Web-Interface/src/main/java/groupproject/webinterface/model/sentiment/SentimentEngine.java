@@ -81,24 +81,29 @@ public class SentimentEngine {
 
 
     private ArrayList<String> takeSample(int sampleSize, ArrayList<String> source){
-        assert sampleSize<source.size();
-
-        ArrayList<String> sample = new ArrayList<>();
-
-        HashSet<Integer> used = new HashSet<>();
-        int index = ThreadLocalRandom.current().nextInt(0,source.size());
-        while (used.size()<sampleSize){
-            //make a new random
-            while (used.contains(index)){
-                index = ThreadLocalRandom.current().nextInt(0,source.size());
-            }
-            used.add(index);
-
-            sample.add(source.get(index));
-
+        if( sampleSize>=source.size()){
+            return (ArrayList<String>) (source.clone());
         }
 
-        return sample;
+        else {
+            ArrayList<String> sample = new ArrayList<>();
+
+            HashSet<Integer> used = new HashSet<>();
+            int index = ThreadLocalRandom.current().nextInt(0,source.size());
+            while (used.size()<sampleSize){
+                //make a new random
+                while (used.contains(index)){
+                    index = ThreadLocalRandom.current().nextInt(0,source.size());
+                }
+                used.add(index);
+
+                sample.add(source.get(index));
+
+            }
+
+            return sample;
+        }
+
     }
 
 
