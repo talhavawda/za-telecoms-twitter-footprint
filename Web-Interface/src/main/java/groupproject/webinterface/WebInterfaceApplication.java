@@ -4,7 +4,6 @@ import groupproject.webinterface.model.Database;
 import groupproject.webinterface.model.QueryNexus;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 
 /*

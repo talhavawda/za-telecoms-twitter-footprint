@@ -12,15 +12,14 @@
         <section class="supporting">
             <div class="col">
                 <section class="dropdown">
-                    <label for="query">Select a query from the drop down menu<br></label>
+                    <label for="query">What Would You Like To See?<br></label>
                     <select name="query" id="query" onchange="showDiv(this, this.value)">
-                        <option value="#">Select A Query</option>
-                        <option value="javascript:gotoChart()">Chart Page</option>
-                        <option value="javascript:gotoSimple()">SimpleQuery Page</option>
-                        <option value="#" id = "useropt">Number of tweets </option>
+                        <option value="#"> _select a query_</option>
+                        <option value="javascript:gotoChart()">Interaction Share Charts</option>
+                        <option value="javascript:gotoSimple()">Number of Companies</option>
+                        <option value="#" id = "useropt">Number of tweets by Company</option>
                         <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
                         <option value="javascript:gotoHashtags()" id = "useropt2">Popular Hashtags</option>
-                        <option value="#" id = "useropt3">Number of tweets: </option>
                         <option value="javascript:gotoIndex()">Back</option>
 
                     </select>

@@ -1,7 +1,6 @@
 package groupproject.webinterface.controllers;
 
 import groupproject.webinterface.model.Database;
-import groupproject.webinterface.model.sentiment.SentimentAnalyzer;
 import groupproject.webinterface.model.sentiment.SentimentEngine;
 import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;

@@ -39,7 +39,7 @@
                 "Return p"
         }
 
-        var viz = new NeoViz.default(config);
+        var viz = new NeoVis.default(config);
         viz.render();
     }
 
@@ -52,6 +52,8 @@
 
     <div id="all">
         <div class = "text">
+            <h2>Overall</h2>
+
             <h6 th:text="${text_all_place_0}"></h6>
             <h6 th:text="${count_all_place_0}"></h6>
             <h6 th:text="${text_all_place_1}"></h6>
@@ -73,6 +75,8 @@
         </div>
 
         <div id="user">
+            <h2>By users</h2>
+
             <h6 th:text="${text_user_place_0}"></h6>
             <h6 th:text="${count_user_place_0}"></h6>
             <h6 th:text="${text_user_place_1}"></h6>
@@ -96,6 +100,8 @@
         </div>
 
         <div id="company">
+            <h2>by Companies</h2>
+
             <h6 th:text="${text_company_place_0}"></h6>
             <h6 th:text="${count_company_place_0}"></h6>
             <h6 th:text="${text_company_place_1}"></h6>
