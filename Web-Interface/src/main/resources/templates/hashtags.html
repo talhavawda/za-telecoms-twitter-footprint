@@ -30,19 +30,15 @@
 
 <script type="text/javascript">
     function draw() {
-        var config ={
+        var config = {
             container_id: "viz",
             server_url: "bolt://localhost:7687",
             server_user: "java_application",
             server_password: "12345",
-            labels: {
-
-            },
-            relationships: {
-
-            },
-            initial_cypher: "MATCH p = ()-[:USES_HASHTAG]->(h:hashtag)\n" +
-                "Return p"
+            labels: {},
+            relationships: {},
+            initial_cypher: "MATCH (t:tweet)-[:USES_HASHTAG]->(h:hashtag) RETURN  h,Count(t) AS used Order by used DESC " +
+                "LIMIT 10"
         }
 
         var viz = new NeoVis.default(config);
@@ -52,9 +48,11 @@
 </script>
 
 <body onload="draw()">
+
     <h1>List of the top 10 most popular hashtags in our findings</h1>
 
     <div id="viz"></div>
+
             <div class = "container">
                 <table style="width:100%">
                     <tr>
@@ -114,8 +112,6 @@
                     </tr>
                 </table>
             </div>
-        </div>
-
 
     </div>
 </body>
