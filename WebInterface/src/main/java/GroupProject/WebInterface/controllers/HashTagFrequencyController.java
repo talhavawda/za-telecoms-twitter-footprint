@@ -1,6 +1,6 @@
-package groupproject.webinterface.controllers;
+package GroupProject.WebInterface.controllers;
 
-import groupproject.webinterface.model.Database;
+import GroupProject.WebInterface.model.Database;
 import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

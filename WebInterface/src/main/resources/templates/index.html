@@ -1,0 +1,40 @@
+<!-- This is the Home (default) Page for the application. It is displayed on the http://localhost:8080 URL-->
+
+<!DOCTYPE html>
+<html   lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./styles/style.css"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <title>Covid-19 Digital Footprint of SA Telecommunications companies</title>
+</head>
+
+
+<body>
+
+        <main>
+            <div class="jumbotron"></div>
+            <div class="container">
+                <h1>Quantifying and classifying the Digital (Social Media) Footprint of South African Telecommunications companies before and during the Covid-19 pandemic</h1>
+                <a href="javascript:gotoAbout()" class="btn-main"> About </a>
+                <a href="javascript:gotoChoose()" class="btn-main"> Queries </a>
+            </div>
+        </main>
+
+
+    <script th:inline = "javascript">
+        function gotoAbout(){
+            window.location.href = "/about";
+        }
+
+         function gotoChoose(){
+            window.location.href = "/choose";
+        }
+
+    </script>
+</body>
+
+</html>

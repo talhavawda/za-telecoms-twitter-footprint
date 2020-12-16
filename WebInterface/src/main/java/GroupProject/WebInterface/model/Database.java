@@ -1,8 +1,6 @@
-package groupproject.webinterface.model;
+package GroupProject.WebInterface.model;
 
 import org.neo4j.driver.*;
-
-
 import java.util.HashMap;
 import java.util.List;
 
