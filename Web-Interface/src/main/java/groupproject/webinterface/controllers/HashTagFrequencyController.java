@@ -20,6 +20,10 @@ public class HashTagFrequencyController {
         templateKeytoAttributeAdded("frequent_hashtags_user",viewTemplate,"user");
         templateKeytoAttributeAdded("frequent_hashtags_company",viewTemplate,"company");
 
+
+        String queryText = Database.instance().textOfQuery("frequent_hashtags_all");
+        viewTemplate.addAttribute("queryText",queryText);
+
         return "hashtags";
     }
 
