@@ -20,7 +20,7 @@ import java.util.List;
 @CrossOrigin
 public class UserSentimentToCompanyController {
     @RequestMapping(value="/usersentiment", method = RequestMethod.GET)
-    public String userSentiment(@RequestParam(value = "user") String user, @RequestParam(value="company") String company, @RequestParam(value = "sample") int sample, Model viewTemplate) {
+    public String userSentiment(@RequestParam(value = "user") String user,@RequestParam(value = "sample") int sample, Model viewTemplate) {
 
         /*
         localhost:8080/usersentiment?user=____&company=____
@@ -31,9 +31,8 @@ public class UserSentimentToCompanyController {
             //get the tweets
             HashMap<String,Object> params = new HashMap<>();
             params.put("user",user);
-            params.put("company",company);
 
-            records = Database.instance().query("tweets_user_mentions_company",params);
+            records = Database.instance().query("tweets_all_by_user",params);
 
         }
         catch (Exception e)
@@ -68,7 +67,6 @@ public class UserSentimentToCompanyController {
 
 
 
-        viewTemplate.addAttribute("company",company);
         viewTemplate.addAttribute("user",user);
 
 

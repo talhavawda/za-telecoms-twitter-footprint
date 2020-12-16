@@ -13,12 +13,24 @@ import java.util.List;
  * */
 public class Database implements AutoCloseable{
 
-    private static Database database;
+    private static Database database = null;
     private Driver driver;
 
     private Database() {
         connect();
     }
+
+    /*
+	Singleton application
+ */
+    public static Database instance() {
+        if (database == null ) {
+            database = new Database();
+        }
+
+        return database;
+    }
+
 
     public void connect(){
 
@@ -49,6 +61,20 @@ public class Database implements AutoCloseable{
     }
 
      */
+
+    public String textOfQuery(String templateKey, HashMap<String,Object> params){
+        String template = QueryNexus.getQueryTemplate(templateKey);
+        Query query = new Query(template,params);
+        return query.text();
+    }
+
+    public String textOfQuery(String templateKey){
+        String template = QueryNexus.getQueryTemplate(templateKey);
+        Query query = new Query(template);
+        return query.text();
+    }
+
+
 
 
     public List<Record> query(String templateKey, HashMap<String,Object> params){
@@ -87,15 +113,6 @@ public class Database implements AutoCloseable{
     }
 
 
-    /*
-        Singleton application
-     */
-    public static Database instance() {
-        if (database == null ) {
-            database = new Database();
-        }
 
-        return database;
-    }
 
 }

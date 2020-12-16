@@ -25,7 +25,7 @@ public class QueryNexus {
         String[][] keysAndQueryBases =
                 {
                         //with no params
-                        {"count_companies", "MATCH (n:company) RETURN count(n) as count"},
+                        {"companies", "MATCH (n:company) RETURN n"},
 
                         {"all", "match(n) return(n)"},
 
@@ -69,7 +69,7 @@ public class QueryNexus {
 
                         //sentiment
                         {"tweets_user_mentions_company", "match(user{username:$user})-[:TWEETED]-(t:tweet)-[:IS_MENTIONED_IN]-(c:company{username:$company}) return t"},
-
+                        {"tweets_all_by_user", "match(user{username:$user})-[:TWEETED]-(t:tweet) return t"},
 
                         //general sentiment
                         //after lockdown

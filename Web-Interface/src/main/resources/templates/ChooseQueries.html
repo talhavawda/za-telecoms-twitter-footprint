@@ -17,52 +17,66 @@
                     <select name="query" id="query" onchange="showDiv(this, this.value)">
                         <option value="#">Select A Query</option>
                         <option value="javascript:gotoChart()">Chart Page</option>
-                        <option value="javascript:gotoSimple()">SimpleQuery Page</option>
+                        <option value="javascript:gotoCompanies()">Companies Page</option>
                         <option value="#">Number of tweets </option>
                         <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
                         <option value="javascript:gotoHashtags()">Popular Hashtags</option>
                         <option value="##">Mentions per company </option>
                         <option value="##">User Sentiment</option>
+                        <option value="####">Sentiment about a Company</option>
                         <option value="javascript:gotoIndex()">Back</option>
 
                     </select>
                 </section>
 
                 <div id="numtweetbtn" class="btn-numtweet">
-                    <button onclick="javascript:gotoNumTweets('telkomza')">Telkom</button>
-                    <button onclick="javascript:gotoNumTweets('rainsouthafrica')">Rain</button>
-                    <button onclick="javascript:gotoNumTweets('afrihost')">Afrihost</button>
-                    <button onclick="javascript:gotoNumTweets('mtnza')">MTN</button>
+                    <button onclick="javascript:decide('telkomza')">Telkom</button>
+                    <button onclick="javascript:decide('rainsouthafrica')">Rain</button>
+                    <button onclick="javascript:decide('afrihost')">Afrihost</button>
+                    <button onclick="javascript:decide('mtnza')">MTN</button>
                 </div>
-                <div id="mentionbtn" class="btn-mentions">
-                    <button onclick="javascript:gotoMentions('telkomza')">Telkom</button>
-                    <button onclick="javascript:gotoMentions('rainsouthafrica')">Rain</button>
-                    <button onclick="javascript:gotoMentions('afrihost')">Afrihost</button>
-                    <button onclick="javascript:gotoMentions('mtnza')">MTN</button>
-                </div>
+
             </div>
         </section>
     </div>
     <script type="text/javascript">
         function showDiv(select, src){
             window.location = src;
-            if(select.value==="#"){
-                document.getElementById('numtweetbtn').style.display = "block";
-            }
-            else if (select.value === "##"){
-                document.getElementById('mentionbtn').style.display = "block";
-            }
+            if(select.value==='#' || select.value==='##' ||select.value==='####')
+            document.getElementById('numtweetbtn').style.display = "block";
         }
 
     </script>
 
     <script th:inline = "javascript">
+        function decide(company){
+            select = document.getElementById('query');
+            value = select.value;
+
+            if(value==="#"){
+                gotoNumTweets(company);
+            }
+            if(value==="##"){
+                gotoMentions(company);
+            }
+            if(value==="####"){
+                gotoGenSent(company);
+            }
+        }
+
+
+        function gotoGenSent(company){
+            window.location.href = "/generalsentiment?company="+company+"&sample=10"
+        }
+        function gotoUserSent(user){
+            window.location.href = "/usersentiment?user="+user+"&sample=10"
+        }
         function gotoChart(){
             window.location.href = "/chart";
         }
 
-         function gotoSimple(){
-            window.location.href = "/data";
+         function gotoCompanies(){
+            window.location.href = "/companies";
         }
 
         function gotoIndex(){

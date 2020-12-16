@@ -18,9 +18,13 @@ public class FrequentlyMentionedUserController {
 
         templateKeytoAttributeAdded("frequent_user_mentions",viewTemplate);
 
+        String queryText = Database.instance().textOfQuery("frequent_user_mentions");
+        viewTemplate.addAttribute("queryText",queryText);
 
         return "freqmentioneduser";
     }
+
+
 
     //use subset id for code simplification ,despite redundancy
     void templateKeytoAttributeAdded(String templateKey, Model viewTemplate ){

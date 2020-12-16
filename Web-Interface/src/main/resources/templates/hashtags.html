@@ -17,6 +17,12 @@
             margin-bottom: 10px;
             text-transform: uppercase;
         }
+        table, th, td {
+            border: 1px solid white;
+        }
+        .container{
+            margin: 50px 250px;
+        }
     </style>
 </head>
 
@@ -46,82 +52,68 @@
 </script>
 
 <body onload="draw()">
-    <h1>List of the most popular hashtags in our findings</h1>
+    <h1>List of the top 10 most popular hashtags in our findings</h1>
 
     <div id="viz"></div>
-
-    <div id="all">
-        <div class = "text">
-            <h2>Overall</h2>
-
-            <h6 th:text="${text_all_place_0}"></h6>
-            <h6 th:text="${count_all_place_0}"></h6>
-            <h6 th:text="${text_all_place_1}"></h6>
-            <h6 th:text="${count_all_place_1}"></h6>
-            <h6 th:text="${text_all_place_2}"></h6>
-            <h6 th:text="${count_all_place_2}"></h6>
-            <h6 th:text="${text_all_place_3}"></h6>
-            <h6 th:text="${count_all_place_3}"></h6>
-            <h6 th:text="${text_all_place_4}"></h6>
-            <h6 th:text="${count_all_place_4}"></h6>
-            <h6 th:text="${text_all_place_5}"></h6>
-            <h6 th:text="${count_all_place_6}"></h6>
-            <h6 th:text="${text_all_place_6}"></h6>
-            <h6 th:text="${count_all_place_7}"></h6>
-            <h6 th:text="${text_all_place_8}"></h6>
-            <h6 th:text="${count_all_place_8}"></h6>
-            <h6 th:text="${text_all_place_9}"></h6>
-            <h6 th:text="${count_all_place_9}"></h6>
-        </div>
-
-        <div id="user">
-            <h2>By users</h2>
-
-            <h6 th:text="${text_user_place_0}"></h6>
-            <h6 th:text="${count_user_place_0}"></h6>
-            <h6 th:text="${text_user_place_1}"></h6>
-            <h6 th:text="${count_user_place_1}"></h6>
-            <h6 th:text="${text_user_place_2}"></h6>
-            <h6 th:text="${count_user_place_2}"></h6>
-            <h6 th:text="${text_user_place_3}"></h6>
-            <h6 th:text="${count_user_place_3}"></h6>
-            <h6 th:text="${text_user_place_4}"></h6>
-            <h6 th:text="${count_user_place_4}"></h6>
-            <h6 th:text="${text_user_place_5}"></h6>
-            <h6 th:text="${count_user_place_5}"></h6>
-            <h6 th:text="${text_user_place_6}"></h6>
-            <h6 th:text="${count_user_place_6}"></h6>
-            <h6 th:text="${text_user_place_7}"></h6>
-            <h6 th:text="${count_user_place_7}"></h6>
-            <h6 th:text="${text_user_place_8}"></h6>
-            <h6 th:text="${count_user_place_8}"></h6>
-            <h6 th:text="${text_user_place_9}"></h6>
-            <h6 th:text="${count_user_place_9}"></h6>
-        </div>
-
-        <div id="company">
-            <h2>by Companies</h2>
-
-            <h6 th:text="${text_company_place_0}"></h6>
-            <h6 th:text="${count_company_place_0}"></h6>
-            <h6 th:text="${text_company_place_1}"></h6>
-            <h6 th:text="${count_company_place_1}"></h6>
-            <h6 th:text="${text_company_place_2}"></h6>
-            <h6 th:text="${count_company_place_2}"></h6>
-            <h6 th:text="${text_company_place_3}"></h6>
-            <h6 th:text="${count_company_place_3}"></h6>
-            <h6 th:text="${text_company_place_4}"></h6>
-            <h6 th:text="${count_company_place_4}"></h6>
-            <h6 th:text="${text_company_place_5}"></h6>
-            <h6 th:text="${count_company_place_5}"></h6>
-            <h6 th:text="${text_company_place_6}"></h6>
-            <h6 th:text="${count_company_place_6}"></h6>
-            <h6 th:text="${text_company_place_7}"></h6>
-            <h6 th:text="${count_company_place_7}"></h6>
-            <h6 th:text="${text_company_place_8}"></h6>
-            <h6 th:text="${count_company_place_8}"></h6>
-            <h6 th:text="${text_company_place_9}"></h6>
-            <h6 th:text="${count_company_place_9}"></h6>
+            <div class = "container">
+                <table style="width:100%">
+                    <tr>
+                        <th>Overall</th>
+                        <th>By Companies</th>
+                        <th>By User</th>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_0}"></h6><h6 th:text="${count_all_place_0}"></h6></td>
+                        <td><h6 th:text="${text_company_place_0}"></h6><h6 th:text="${count_company_place_0}"></h6></td>
+                        <td><h6 th:text="${text_user_place_0}"></h6><h6 th:text="${count_user_place_0}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_1}"></h6><h6 th:text="${count_all_place_1}"></h6></td>
+                        <td><h6 th:text="${text_company_place_1}"></h6><h6 th:text="${count_company_place_1}"></h6></td>
+                        <td><h6 th:text="${text_user_place_1}"></h6><h6 th:text="${count_user_place_1}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_2}"></h6><h6 th:text="${count_all_place_2}"></h6></td>
+                        <td><h6 th:text="${text_company_place_2}"></h6><h6 th:text="${count_company_place_2}"></h6></td>
+                        <td><h6 th:text="${text_user_place_2}"></h6><h6 th:text="${count_user_place_2}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_3}"></h6><h6 th:text="${count_all_place_3}"></h6></td>
+                        <td><h6 th:text="${text_company_place_3}"></h6><h6 th:text="${count_company_place_3}"></h6></td>
+                        <td><h6 th:text="${text_user_place_3}"></h6><h6 th:text="${count_user_place_3}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_4}"></h6><h6 th:text="${count_all_place_4}"></h6></td>
+                        <td><h6 th:text="${text_company_place_4}"></h6><h6 th:text="${count_company_place_4}"></h6></td>
+                        <td><h6 th:text="${text_user_place_4}"></h6><h6 th:text="${count_user_place_4}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_5}"></h6><h6 th:text="${count_all_place_5}"></h6></td>
+                        <td><h6 th:text="${text_company_place_5}"></h6><h6 th:text="${count_company_place_5}"></h6></td>
+                        <td><h6 th:text="${text_user_place_5}"></h6><h6 th:text="${count_user_place_5}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_6}"></h6><h6 th:text="${count_all_place_6}"></h6></td>
+                        <td><h6 th:text="${text_company_place_6}"></h6><h6 th:text="${count_company_place_6}"></h6></td>
+                        <td><h6 th:text="${text_user_place_6}"></h6><h6 th:text="${count_user_place_6}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_7}"></h6><h6 th:text="${count_all_place_7}"></h6></td>
+                        <td><h6 th:text="${text_company_place_7}"></h6><h6 th:text="${count_company_place_7}"></h6></td>
+                        <td><h6 th:text="${text_user_place_7}"></h6><h6 th:text="${count_user_place_7}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_8}"></h6><h6 th:text="${count_all_place_8}"></h6></td>
+                        <td><h6 th:text="${text_company_place_8}"></h6><h6 th:text="${count_company_place_8}"></h6></td>
+                        <td><h6 th:text="${text_user_place_8}"></h6><h6 th:text="${count_user_place_8}"></h6></td>
+                    </tr>
+                    <tr>
+                        <td><h6 th:text="${text_all_place_9}"></h6><h6 th:text="${count_all_place_9}"></h6></td>
+                        <td><h6 th:text="${text_company_place_9}"></h6><h6 th:text="${count_company_place_9}"></h6></td>
+                        <td><h6 th:text="${text_user_place_9}"></h6><h6 th:text="${count_user_place_9}"></h6></td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
 
