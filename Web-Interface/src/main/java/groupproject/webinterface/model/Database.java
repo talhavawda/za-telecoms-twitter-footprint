@@ -62,6 +62,20 @@ public class Database implements AutoCloseable{
 
      */
 
+    public String textOfQuery(String templateKey, HashMap<String,Object> params){
+        String template = QueryNexus.getQueryTemplate(templateKey);
+        Query query = new Query(template,params);
+        return query.text();
+    }
+
+    public String textOfQuery(String templateKey){
+        String template = QueryNexus.getQueryTemplate(templateKey);
+        Query query = new Query(template);
+        return query.text();
+    }
+
+
+
 
     public List<Record> query(String templateKey, HashMap<String,Object> params){
         Database database = Database.instance();

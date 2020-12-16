@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-
 /*
 	The @SpringBootAnnotation is a convenience annotation that adds the following annotations:
 		@Configuration - tags the class as a source of bean definitions for the application context

@@ -1,7 +1,7 @@
 package groupproject.webinterface.controllers;
 
 import groupproject.webinterface.model.Database;
-import groupproject.webinterface.model.sentiment.SentimentAnalyzer;
+import groupproject.webinterface.model.sentiment.SentimentEngine;
 import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +20,7 @@ import java.util.List;
 @CrossOrigin
 public class UserSentimentToCompanyController {
     @RequestMapping(value="/usersentiment", method = RequestMethod.GET)
-    public String userSentiment(@RequestParam(value = "user") String user, @RequestParam(value="company") String company, Model viewTemplate) {
+    public String userSentiment(@RequestParam(value = "user") String user,@RequestParam(value = "sample") int sample, Model viewTemplate) {
 
         /*
         localhost:8080/usersentiment?user=____&company=____
@@ -31,9 +31,8 @@ public class UserSentimentToCompanyController {
             //get the tweets
             HashMap<String,Object> params = new HashMap<>();
             params.put("user",user);
-            params.put("company",company);
 
-            records = Database.instance().query("tweets_user_mentions_company",params);
+            records = Database.instance().query("tweets_all_by_user",params);
 
         }
         catch (Exception e)
@@ -42,12 +41,18 @@ public class UserSentimentToCompanyController {
         }
 
         //sentiment analysis
-        ArrayList<String > classifications = new ArrayList<>();
+
+        ArrayList<String > tweetTexts = new ArrayList<>();
+
         for (Record record:records) {
             String tweet = record.get(0).get("tweet").asString();
-            String current = SentimentAnalyzer.classify(tweet);
-            classifications.add(current);
+            tweetTexts.add(tweet);
         }
+
+        SentimentEngine engine = new SentimentEngine();
+        ArrayList<String> classifications = engine.concatAndJudgeStrings(tweetTexts, sample);
+
+
 
         int Positives = Collections.frequency(classifications,"Positive");
         int Neutrals = Collections.frequency(classifications,"Neutral");
@@ -62,7 +67,6 @@ public class UserSentimentToCompanyController {
 
 
 
-        viewTemplate.addAttribute("company",company);
         viewTemplate.addAttribute("user",user);
 
 

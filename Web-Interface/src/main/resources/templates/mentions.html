@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>number of tweets</title>
 
     <style type="text/css">
         body{
@@ -19,13 +20,33 @@
         }
     </style>
 </head>
-<body>
-    <div id="thing">
-        <h1 th:text="${comp1}"></h1>
-        <h1 th:text="${comp2}"></h1>
-        <h1 th:text="${comp3}"></h1>
-        <h1 th:text="${comp4}"></h1>
 
+
+<body>
+    <div id="heading">
+        <h1>number of tweets mentioning company</h1>
     </div>
+
+    <div id="company">
+        <h1 th:text="${company}"></h1>
+    </div>
+
+    <h1>all</h1>
+    <div id="count">
+        <h1 th:text="${count}"></h1>
+    </div>
+
+    <h1>pre lockdown</h1>
+
+    <div id="countbefore">
+        <h1 th:text="${countbefore}"></h1>
+    </div>
+
+    <h1>post lockdown</h1>
+
+    <div id="countafter">
+        <h1 th:text="${countafter}"></h1>
+    </div>
+
 </body>
 </html>
