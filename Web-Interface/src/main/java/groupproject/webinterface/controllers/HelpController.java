@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HelpController {
-    @GetMapping("/help")
+    @GetMapping("/queryhelp")
     public String index(){
-        return "help";
+        return "queryhelp";
     }
 }
