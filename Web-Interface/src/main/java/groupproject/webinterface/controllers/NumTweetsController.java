@@ -1,7 +1,5 @@
 package groupproject.webinterface.controllers;
 
-import groupproject.webinterface.model.Database;
-import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
-import java.util.List;
 
 
 @Controller
