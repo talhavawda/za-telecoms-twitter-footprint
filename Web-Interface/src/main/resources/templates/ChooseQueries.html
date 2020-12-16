@@ -17,20 +17,27 @@
                         <option value="#">Select A Query</option>
                         <option value="javascript:gotoChart()">Chart Page</option>
                         <option value="javascript:gotoSimple()">SimpleQuery Page</option>
-                        <option value="#" id = "useropt">Number of tweets </option>
+                        <option value="#">Number of tweets </option>
                         <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
-                        <option value="javascript:gotoHashtags()" id = "useropt2">Popular Hashtags</option>
-                        <option value="#" id = "useropt3">Number of tweets: </option>
+                        <option value="javascript:gotoHashtags()">Popular Hashtags</option>
+                        <option value="##">Mentions per company </option>
+                        <option value="##">User Sentiment</option>
                         <option value="javascript:gotoIndex()">Back</option>
 
                     </select>
                 </section>
 
-                <div id="hish" class="btn-numtweet">
+                <div id="numtweetbtn" class="btn-numtweet">
                     <button onclick="javascript:gotoNumTweets('telkomza')">Telkom</button>
                     <button onclick="javascript:gotoNumTweets('rainsouthafrica')">Rain</button>
                     <button onclick="javascript:gotoNumTweets('afrihost')">Afrihost</button>
                     <button onclick="javascript:gotoNumTweets('mtnza')">MTN</button>
+                </div>
+                <div id="mentionbtn" class="btn-mentions">
+                    <button onclick="javascript:gotoMentions('telkomza')">Telkom</button>
+                    <button onclick="javascript:gotoMentions('rainsouthafrica')">Rain</button>
+                    <button onclick="javascript:gotoMentions('afrihost')">Afrihost</button>
+                    <button onclick="javascript:gotoMentions('mtnza')">MTN</button>
                 </div>
             </div>
         </section>
@@ -39,11 +46,13 @@
         function showDiv(select, src){
             window.location = src;
             if(select.value==="#"){
-                document.getElementById('hish').style.display = "block";
-            } else{
-                document.getElementById('hish').style.display = "none";
+                document.getElementById('numtweetbtn').style.display = "block";
+            }
+            else if (select.value === "##"){
+                document.getElementById('mentionbtn').style.display = "block";
             }
         }
+
     </script>
 
     <script th:inline = "javascript">
@@ -61,6 +70,9 @@
 
          function gotoNumTweets(company){
             window.location.href = "/numtweets?company="+company;
+        }
+        function gotoMentions(company){
+            window.location.href = "/mentions?company="+company;
         }
 
         function gotoFreqUser() {

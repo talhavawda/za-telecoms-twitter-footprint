@@ -168,6 +168,10 @@ footer p {
     text-align:center;
 }
 
-#hish{
+#numtweetbtn{
+    display: none;
+}
+
+#mentionbtn{
     display: none;
 }
