@@ -13,7 +13,7 @@
             <div class="col">
                 <section class="dropdown">
                     <label for="query">Select a query from the drop down menu<br>For more information about the queries<br><br>
-                        <a href="queryhelp.html">Click Here</a><br><br></label>
+                        <a href="javascript:gotoHelp()">Click Here</a><br><br></label>
                     <select name="query" id="query" onchange="showDiv(this, this.value)">
                         <option value="#">Select A Query</option>
                         <option value="javascript:gotoChart()">Chart Page</option>
@@ -81,6 +81,9 @@
         }
         function gotoHashtags(){
             window.location.href = "/hashtags";
+        }
+        function gotoHelp(){
+            window.location.href = "/queryhelp";
         }
 
     </script>
