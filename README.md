@@ -9,8 +9,8 @@
   - See the Readme.txt in the Database Queries folder to create your local database
   - The default user is 'neo4j' -> this is what the Neo4j Browser uses in displaying the database
     - So for thw Web Interface to connect to the database, we need to create another user for it
-      - Open Neo4j Browser and create a new user 'java_application' with reader permission (this is the username specified in the Web Interface connection to the database)
-      - Set the database password to '12345'
+      - Open Neo4j Browser and create a new user with username 'java_application' and password '12345', with reader permission
+        - This is the username and password specified in the Web Interface connection to the database)
   
 The database needs to be running for the Web Interface to connect to it
 
