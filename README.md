@@ -16,7 +16,7 @@ The database needs to be running for the Web Interface to connect to it
 <br>
 
 #### Web Interface
-I (Talha) set up the Neo4j dependencies and the connection to the database
+To run the Web Interface, have the database running in Neo4j Desktop, and go to the URL http://localhost:8080/
 
 <br>
 
