@@ -7,42 +7,42 @@
     <script type= "text/javascript" src="choosemenu.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>SELECT A QUERY </h1>
-        <section class="supporting">
-            <div class="col">
-                <section class="dropdown">
-                    <label for="query">Select a query from the drop down menu<br></label>
-                    <select name="query" id="query" onchange="showDiv(this, this.value)">
-                        <option value="#">Select A Query</option>
-                        <option value="javascript:gotoChart()">Chart Page</option>
-                        <option value="javascript:gotoCompanies()">Companies Page</option>
-                        <option value="#">Number of tweets </option>
-                        <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
-                        <option value="javascript:gotoHashtags()">Popular Hashtags</option>
-                        <option value="##">Mentions per company </option>
-                        <option value="####">Sentiment about a Company</option>
-                        <option value="javascript:gotoAnalysis()">Analysis</option>
-                        <option value="javascript:gotoIndex()">Back</option>
+<div class="container">
+    <h1>SELECT A QUERY </h1>
+    <section class="supporting">
+        <div class="col">
+            <section class="dropdown">
+                <label for="query">Select a query from the drop down menu<br></label>
+                <select name="query" id="query" onchange="showDiv(this, this.value)">
+                    <option value="#">Select A Query</option>
+                    <option value="javascript:gotoChart()">Chart Page</option>
+                    <option value="javascript:gotoCompanies()">Companies Page</option>
+                    <option value="#">Number of tweets </option>
+                    <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
+                    <option value="javascript:gotoHashtags()">Popular Hashtags</option>
+                    <option value="##">Mentions per company </option>
+                    <option value="####">Sentiment about a Company</option>
+                    <option value="javascript:gotoAnalysis()">Analysis</option>
+                    <option value="javascript:gotoIndex()">Back</option>
 
-                    </select>
-                    <div id="numtweetbtn" class="btn-numtweet">
-                        <br><br><br><br><br>
-                        <button onclick="javascript:decide('telkomza')">Telkom</button>
-                        <button onclick="javascript:decide('rainsouthafrica')">Rain</button>
-                        <button onclick="javascript:decide('afrihost')">Afrihost</button>
-                        <button onclick="javascript:decide('mtnza')">MTN</button>
-                    </div>
-                </section>
+                </select>
+                <div id="numtweetbtn" class="btn-numtweet">
+                    <br><br><br><br><br>
+                    <button onclick="javascript:decide('telkomza')">Telkom</button>
+                    <button onclick="javascript:decide('rainsouthafrica')">Rain</button>
+                    <button onclick="javascript:decide('afrihost')">Afrihost</button>
+                    <button onclick="javascript:decide('mtnza')">MTN</button>
+                </div>
+            </section>
 
-                <p>For more information about the queries<br><br>
-                    <a href="javascript:gotoHelp()">Click Here</a><br>
-                </p>
+            <p>For more information about the queries<br><br>
+                <a href="javascript:gotoHelp()">Click Here</a><br>
+            </p>
 
-            </div>
-        </section>
-    </div>
-    <script type="text/javascript">
+        </div>
+    </section>
+</div>
+<script type="text/javascript">
         function showDiv(select, src){
             window.location = src;
             if(select.value==='#' || select.value==='##' ||select.value==='####')
@@ -51,7 +51,7 @@
 
     </script>
 
-    <script th:inline = "javascript">
+<script th:inline = "javascript">
         function decide(company){
             select = document.getElementById('query');
             value = select.value;
@@ -103,7 +103,7 @@
             window.location.href = "/queryhelp";
         }
         function gotoAnalysis(){
-            window.location.href = "/Analysi";
+            window.location.href = "/Analysis";
         }
 
     </script>
