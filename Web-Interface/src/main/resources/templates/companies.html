@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        body{
+            background-color: #303030;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        h1{
+            font-weight: 300;
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        #viz{
+            width: 500px;
+            height: 275px;
+        }
+    </style>
 </head>
-<body>
+
+<script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+
+<script type="text/javascript">
+    function draw() {
+        var config = {
+            container_id: "viz",
+            server_url: "bolt://localhost:7687",
+            server_user: "java_application",
+            server_password: "12345",
+            labels: {},
+            relationships: {},
+            initial_cypher: "MATCH (c:company) RETURN c"
+        }
+
+        var viz = new NeoVis.default(config);
+        viz.render();
+    }
+
+</script>
+
+<body onload="draw()">
+
+    <div id="viz"></div>
+
     <div id="thing">
+
         <h1 th:text="${comp1}"></h1>
         <h1 th:text="${comp2}"></h1>
         <h1 th:text="${comp3}"></h1>
