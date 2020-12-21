@@ -11,10 +11,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 
-
+/**
+ * handles requests for endpoint "/mentions"
+ * */
 @Controller
 @CrossOrigin
 public class MentionsCountController {
+    /**
+     * if URL Endpoint is "/mentions"
+     * adds attributes to the model as described below:
+     *      number of times each company was mentioned in the dataset
+     * returns the html page mentions from templates folder, formatted by Thymeleaf
+     * */
     @RequestMapping(value="/mentions", method = RequestMethod.GET)
     public String mentions(@RequestParam(value="company") String company, Model viewTemplate){
         HashMap<String, Object> params = new HashMap<>();

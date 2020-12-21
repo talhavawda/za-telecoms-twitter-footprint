@@ -7,6 +7,9 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * this class uses the Stanford CoreNLP dependencies to perform sentiment analysis
+ * */
 public class SentimentEngine {
     StanfordCoreNLP pipeline;
 
@@ -15,6 +18,9 @@ public class SentimentEngine {
         pipeline = initPipeline();
     }
 
+    /**
+     * set up a pipeline to perfrom sentiment analysis
+     * */
     private StanfordCoreNLP initPipeline(){
         // set up pipeline properties
         Properties props = new Properties();
@@ -31,6 +37,10 @@ public class SentimentEngine {
 
 
 
+    /**
+     * uses Stanford CoreNLP sentiment pipeline which was set up in initPipeline
+     * classifies each sentence in the string as positive, neutral or negative
+     * */
 
     public ArrayList<String> judgeString(String text){
         CoreDocument document = new CoreDocument(text);
@@ -51,9 +61,12 @@ public class SentimentEngine {
         return subSentiments;
     }
 
-    //concatenates all strings such that no sentences run over from one list item to next one
-    //then judges this single large string
-    //returns a list of the classifications for each sentence
+    /**
+     * takes a sample using takeSample
+     * concatenates all strings in sample using listtosentences
+     * then judges this single large string using judgeString;
+     * returns a list of the classifications for each sentence
+     */
     public ArrayList<String> concatAndJudgeStrings(ArrayList<String> docs, int sampleSize){
         ArrayList<String> sampleDocs = takeSample(sampleSize,docs);
         String concatenated = ListToSentences(sampleDocs);
@@ -61,6 +74,11 @@ public class SentimentEngine {
     }
 
 
+    /**
+     * converts a list of strings to a single long string.
+     * ensures they are formattes such that CoreNLP can correctly identify where sentences end and begin
+     * allows data to be passed to the pipeline at once instead of separately
+     * */
     private String ListToSentences(ArrayList<String> docs){
         StringBuilder builder= new StringBuilder();
 
@@ -80,6 +98,11 @@ public class SentimentEngine {
 
 
 
+
+    /**
+     * if the application requires speed, it cannot use the entire corpus.
+     * this method pulls a random sample from the corpus to use
+     * */
     private ArrayList<String> takeSample(int sampleSize, ArrayList<String> source){
         if( sampleSize>=source.size()){
             return (ArrayList<String>) (source.clone());
@@ -108,6 +131,7 @@ public class SentimentEngine {
 
 
     //return the most common classification
+    //currently unused
     public static String modalClassification(final ArrayList<String> classifications){
         Comparator<String> byFreqency = new Comparator<String>() {
             @Override

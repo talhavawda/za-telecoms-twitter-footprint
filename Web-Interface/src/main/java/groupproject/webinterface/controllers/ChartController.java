@@ -11,10 +11,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.HashMap;
 import java.util.List;
 
-
+/**
+ * serves the endpoint "/chart"
+ * */
 @Controller
 @CrossOrigin
 public class ChartController {
+
+    /**
+     * if URL Endpoint is "/chart"
+     * adds attributes to the model as described below:
+     *     the username of each company
+     *     the number of tweets by each company
+     * returns the html page chart from templates folder, formatted by Thymeleaf
+     * on the view layer javascript is used to make charts
+     * */
     @RequestMapping(value="/chart", method = RequestMethod.GET)
     public String numTweets(Model viewTemplate){
 
