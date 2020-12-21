@@ -9,6 +9,21 @@
             width: 900px;
             height: 500px;
         }
+        body{
+            background-color: #303030;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        h1{
+            font-weight: 300;
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        #contain{
+            float: right;
+        }
     </style>
 
     <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
@@ -19,7 +34,7 @@
 
 
 <body >
-
+<div id = "contain">
     <div id="heading">
         <h1>sentiment of interactions with </h1>
     </div>
@@ -74,8 +89,8 @@
         </div>
     </div>
 
+    </div>
 </div>
-
 
 
 <script th:inline="javascript">

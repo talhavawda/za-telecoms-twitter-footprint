@@ -12,8 +12,7 @@
         <section class="supporting">
             <div class="col">
                 <section class="dropdown">
-                    <label for="query">Select a query from the drop down menu<br>For more information about the queries<br><br>
-                        <a href="javascript:gotoHelp()">Click Here</a><br><br></label>
+                    <label for="query">Select a query from the drop down menu<br></label>
                     <select name="query" id="query" onchange="showDiv(this, this.value)">
                         <option value="#">Select A Query</option>
                         <option value="javascript:gotoChart()">Chart Page</option>
@@ -22,12 +21,16 @@
                         <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
                         <option value="javascript:gotoHashtags()">Popular Hashtags</option>
                         <option value="##">Mentions per company </option>
-                        <option value="##">User Sentiment</option>
                         <option value="####">Sentiment about a Company</option>
+                        <option value="######">Analysis</option>
                         <option value="javascript:gotoIndex()">Back</option>
 
                     </select>
                 </section>
+
+                <p>For more information about the queries<br><br>
+                    <a href="javascript:gotoHelp()">Click Here</a><br>
+                </p>
 
                 <div id="numtweetbtn" class="btn-numtweet">
                     <button onclick="javascript:decide('telkomza')">Telkom</button>
@@ -61,6 +64,9 @@
             }
             if(value==="####"){
                 gotoGenSent(company);
+            }
+            if(value === "######"){
+                gotoAnalysis();
             }
         }
 
@@ -98,6 +104,9 @@
         }
         function gotoHelp(){
             window.location.href = "/queryhelp";
+        }
+        function gotoAnalysis(){
+            window.location.href = "/Analysi";
         }
 
     </script>
