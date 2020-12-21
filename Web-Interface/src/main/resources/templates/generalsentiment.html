@@ -23,6 +23,12 @@
         }
         #contain{
             float: right;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        #charts{
+            float: left;
+            margin-right: 0px;
         }
     </style>
 
@@ -34,21 +40,22 @@
 
 
 <body >
-<div id = "contain">
+
     <div id="heading">
         <h1>sentiment of interactions with </h1>
     </div>
-
     <div id="company">
         <h1 th:text="${company}"></h1>
     </div>
+    <div id = "charts">
+        <div id="piechartBefore"></div>
+        <div id="piechartAfter"></div>
+    </div>
 
-    <div id="piechartBefore"></div>
-    <div id="piechartAfter"></div>
-
-
+<div id = "contain">
     <div id="counts">
     <div id="countbefore">
+        <h1><b>Before Lockdown</b></h1>
         <div>
             num positive interactions:
             <p th:text="${beforePositives}"></p>
@@ -69,7 +76,7 @@
     </div>
 
     <div id="countafter">
-
+        <h1><br><br><br><br><b>During Lockdown</b></h1>
         <div>
             num positive interactions:
             <p th:text="${afterPositives}"></p>
