@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sentiment</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+
+<body>
+
+    <div>
+        given a user this page shows the sentiment of the users tweets
+    </div>
+
+
+    <div id="viz"></div>
+
+    <div id="piechart"></div>
+    <div>
+        these are the available thymeleaf parameters given by the controller:
+
+        <p th:text="${user}"></p>
+
+
+        <div>
+            num positive interactions:
+            <p th:text="${positives}"></p>
+        </div>
+
+        <div>
+            num neutral interactions:
+            <p th:text="${neutrals}"></p>
+
+        </div>
+
+
+        <div>
+            num negative interactions:
+            <p th:text="${negatives}"></p>
+
+        </div>
+
+
+
+    </div>
+
+
+<script>
+    var G = parseInt([[${positives}]]);
+    var N = parseInt([[${neutrals}]]);
+    var B = parseInt([[${negatives}]]);
+
+
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Sentiment', 'Amount'],
+            ['Positive', G],
+            ['Neutral', N],
+            ['Negative', B],
+        ]);
+
+        var p_options = {'title':'Sentiment of this users interactions', 'width':650, 'height':600, backgroundColor: '#EEEEEE'};
+
+        var pchart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+
+        pchart.draw(data, p_options);
+    }
+</script>
+
+</body>
+</html>
