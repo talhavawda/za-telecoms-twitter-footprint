@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>number of tweets</title>
+
+    <style type="text/css">
+        body{
+            background-color: #303030;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        h1{
+            font-weight: 300;
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="heading">
+        <h1>number of tweets mentioning company</h1>
+    </div>
+
+    <div id="company">
+        <h1 th:text="${company}"></h1>
+    </div>
+
+    <h1>all</h1>
+    <div id="count">
+        <h1 th:text="${count}"></h1>
+    </div>
+
+    <h1>pre lockdown</h1>
+
+    <div id="countbefore">
+        <h1 th:text="${countbefore}"></h1>
+    </div>
+
+    <h1>post lockdown</h1>
+
+    <div id="countafter">
+        <h1 th:text="${countafter}"></h1>
+    </div>
+
+</body>
+</html>
