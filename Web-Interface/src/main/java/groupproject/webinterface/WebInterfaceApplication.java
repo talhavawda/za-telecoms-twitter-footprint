@@ -23,11 +23,13 @@ public class WebInterfaceApplication {
 
 
 		//set up singletons
-		QueryNexus.initQueryNexus();
+		QueryNexus queryNexus = null;
 		Database db = null;
-
+//testing the singletons
 		try {
 			db = Database.instance();
+			queryNexus = QueryNexus.instance();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
