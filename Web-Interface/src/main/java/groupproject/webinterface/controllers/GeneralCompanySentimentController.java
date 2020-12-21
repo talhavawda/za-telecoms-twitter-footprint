@@ -15,10 +15,21 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-
+/**
+ * handles requests for endpoint "/generalsentiment"
+ * */
 @Controller
 @CrossOrigin
 public class GeneralCompanySentimentController {
+    /**
+     * if URL Endpoint is "/generalsentiment"
+     * makes use of the url parameter ?company
+     * adds attributes to the model as described below:
+     *      number of instances of positive, neutral and negative sentiments toward the company before lockdown began
+     *      number of instances of positive, neutral and negative sentiments toward the company after lockdown began
+     *      number of instances of positive, neutral and negative sentiments toward the company overall
+     * returns the html page generalsentiment from templates folder, formatted by Thymeleaf
+     * */
     @RequestMapping(value="/generalsentiment", method = RequestMethod.GET)
     public String generalSentiment(@RequestParam(value="company") String company, @RequestParam(value="sample") int sample, Model viewTemplate) {
 
@@ -53,7 +64,11 @@ public class GeneralCompanySentimentController {
         return "generalsentiment";
     }
 
-
+/**
+ * takes the template key and a map of params to form a query in database.
+ * this template will be a call for tweets mentioning the company before or after the lockdown
+ * returns an int count of positive, neutral and negative tweets
+ * */
     private int[] templateToSentimentCounts(String templateKey, HashMap<String,Object> params, int sample){
         List<Record> Records = null;
 

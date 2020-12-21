@@ -8,10 +8,18 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
-
+/**
+ * serves the endpoint "/companies"
+ * */
 @Controller
 @CrossOrigin
 public class CompaniesController {
+    /**
+     * if URL Endpoint is "/companies"
+     * adds attributes to the model as described below:
+     *     the username of each company
+     * returns the html page companies from templates folder, formatted by Thymeleaf
+     * */
     @RequestMapping(value="/companies", method = RequestMethod.GET)
     public String companies(Model viewTemplate){
         List<Record> records = Database.instance().query("companies");
