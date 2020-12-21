@@ -1,4 +1,4 @@
-Our data is static, so we can know what to expect. The idea i have in
+Our data is static, so we can know what to expect. The idea I have in
 mind is to query the database, return either a visual graph or a table.
 We can then explain the results in detail and assess the situation. 
 We can brainstorm ideas as to why the outcome is a specific way 

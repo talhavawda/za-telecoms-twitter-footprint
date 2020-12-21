@@ -9,10 +9,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 
-
+/**
+ * handles requests for enpoint "/numtweets"
+ * */
 @Controller
 @CrossOrigin
 public class NumTweetsController {
+    /**
+     * if URL Endpoint is "/numtweets"
+     * makse use of the URL parameter ?company
+     * adds attributes to the model as described below:
+     *      number of tweets for the company
+     * returns the html page numtweets from templates folder, formatted by Thymeleaf
+     * */
     @RequestMapping(value="/numtweets", method = RequestMethod.GET)
     public String numTweets(@RequestParam(value="company") String company, Model viewTemplate){
         HashMap<String, Object> params = new HashMap<>();

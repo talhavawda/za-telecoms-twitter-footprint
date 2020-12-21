@@ -1,6 +1,8 @@
 package GroupProject.WebInterface.model;
 
 import org.neo4j.driver.*;
+
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -61,13 +63,13 @@ public class Database implements AutoCloseable{
      */
 
     public String textOfQuery(String templateKey, HashMap<String,Object> params){
-        String template = QueryNexus.getQueryTemplate(templateKey);
+        String template = QueryNexus.instance().getQueryTemplate(templateKey);
         Query query = new Query(template,params);
         return query.text();
     }
 
     public String textOfQuery(String templateKey){
-        String template = QueryNexus.getQueryTemplate(templateKey);
+        String template = QueryNexus.instance().getQueryTemplate(templateKey);
         Query query = new Query(template);
         return query.text();
     }
@@ -79,7 +81,7 @@ public class Database implements AutoCloseable{
         Database database = Database.instance();
 
 
-        String template = QueryNexus.getQueryTemplate(templateKey);
+        String template = QueryNexus.instance().getQueryTemplate(templateKey);
         Query query = new Query(template,params);
         try ( Session session = driver.session() )
         {
@@ -90,7 +92,7 @@ public class Database implements AutoCloseable{
     }
     public List<Record> query(String templateKey){
         Database database = Database.instance();
-        String template = QueryNexus.getQueryTemplate(templateKey);
+        String template = QueryNexus.instance().getQueryTemplate(templateKey);
         Query query = new Query(template);
         try ( Session session = driver.session() )
         {

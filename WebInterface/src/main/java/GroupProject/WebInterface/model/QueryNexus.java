@@ -3,25 +3,33 @@ package GroupProject.WebInterface.model;
 import java.util.HashMap;
 
 /**
- * queries handled already:
- *      get all nodes in graph
- *
- *      get number of companies
- *
- *      get all tweet nodes where the tweet was submitted before lockdown began
- *
- *      get all tweet nodes where the tweet was submitted after lockdown began
- *
- *      get count of the tweet nodes where a specific company tweeted it
- *
- *      get all tweet nodes where a user submitted it and mentioned a company
+ * singleton class that allows prototype queries to be passed to neo4j Query objects from a common source.
+ * callers simply need to use the templatekey and will receive a parameterized or 0-parameter cypher string
+ * neo4j query class can then add params to the query string
  * */
 
 public class QueryNexus {
+    private static  QueryNexus nexus;
+    private QueryNexus(){
+        initQueryNexus();
+    }
+    public static QueryNexus instance(){
+        if (nexus ==null)
+            nexus = new QueryNexus();
+
+        return nexus;
+    }
+
+
+    //data
     static HashMap<String, String> queryTemplates;
 
-    //if a better way to do this exists, please replace
-    public static void initQueryNexus(){
+    /**
+     * set up the data structure to have a list of all queries we need
+     * add the new query and template key to the array,
+     * init will take care of adding them to the map for external use
+     * */
+    private static void initQueryNexus(){
         String[][] keysAndQueryBases =
                 {
                         //with no params
@@ -92,13 +100,15 @@ public class QueryNexus {
 
 
                 };
-
         queryTemplates = new HashMap<>();
-
         for (String[] pair:keysAndQueryBases){
             queryTemplates.put(pair[0],pair[1]);
         }
     }
 
-    public static String getQueryTemplate(String key){return queryTemplates.get(key);}
+
+    /**
+     * this method lets external objects retrieve a cypher query if they have the key for the template
+     * */
+    public String getQueryTemplate(String key){return queryTemplates.get(key);}
 }

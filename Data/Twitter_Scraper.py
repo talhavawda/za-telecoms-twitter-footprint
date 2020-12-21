@@ -18,14 +18,18 @@ def search_keywords(word_phrase):
     t.Output = "keywords.csv"
     twint.run.Search(t)
 
-accounts = ["TelkomZa", "rainSouthAfrica", "Afrihost", "MTNza"]
+accounts = ["TelkomZA", "rainSouthAfrica", "Afrihost", "MTNza"]
 for i in range(len(accounts)):
     search_account(accounts[i])
 
-keywords_phrases = ["working from home ", "#WFH", "#workfromhome", "WiFi", "isp",
-                    "university data", "data", "studying",  "university", "exams", "online learning", "zoom",
-                    "zero rated", "tests", "virtual", "assessments",
-                    "reception", "mobile data", "lockdown", "telecom"]
+keywords_phrases = ["working from home ", "#WFH", "#workfromhome", "WiFi", "wifi", "isp", "ISP", 
+                    "university data", "data", "studying", "study",  "university", "exam", "online",
+                    "exams", "online learning", "zoom", "zero rated", "tests", "virtual", "assessments", 
+                    "assignment", "reception", "mobile data", "lockdown", "telecom", "Telkom", "MTN", 
+                    "Afrihost", "Rain", "slow internet", "cant study", "UKZN", "UCT", "WITS", "UJ", "UP", 
+                    "Stellenbosch", "covid", "coronavirus", "covid-19"]
+
+
 for i in range(len(keywords_phrases)):
     key = keywords_phrases[i]
     for j in range(len(accounts)):

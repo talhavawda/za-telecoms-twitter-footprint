@@ -1,9 +1,9 @@
 package GroupProject.WebInterface;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import GroupProject.WebInterface.model.Database;
 import GroupProject.WebInterface.model.QueryNexus;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 /*
@@ -23,14 +23,30 @@ public class WebInterfaceApplication {
 
 
 		//set up singletons
-		QueryNexus.initQueryNexus();
+		QueryNexus queryNexus = null;
 		Database db = null;
-
+//testing the singletons
 		try {
 			db = Database.instance();
+			queryNexus = QueryNexus.instance();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+
+
+
+/*
+
+		try {
+			db.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+ */
+
 	}
 
 }

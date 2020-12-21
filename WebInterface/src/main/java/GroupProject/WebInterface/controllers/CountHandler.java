@@ -5,7 +5,9 @@ import org.neo4j.driver.Record;
 
 import java.util.HashMap;
 import java.util.List;
-
+/**
+ * common location for queriers that need a count to obtain that count as a string out of the neo4j Records list
+ * */
 class CountHandler {
     public static String getCountFromTemplateKey(String templateKey, HashMap<String, Object> params){
         String result;
