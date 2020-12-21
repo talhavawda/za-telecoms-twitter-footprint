@@ -8,7 +8,7 @@ public class AnalysisController {
 
     @GetMapping("/Analysis")
     public String choose(){
-        return "Analysis";
+        return "Analysi";
     }
 }
 
