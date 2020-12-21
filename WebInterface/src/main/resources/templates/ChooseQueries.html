@@ -12,8 +12,7 @@
         <section class="supporting">
             <div class="col">
                 <section class="dropdown">
-                    <label for="query">Select a query from the drop down menu<br>For more information about the queries<br><br>
-                        <a href="javascript:gotoHelp()">Click Here</a><br><br></label>
+                    <label for="query">Select a query from the drop down menu<br></label>
                     <select name="query" id="query" onchange="showDiv(this, this.value)">
                         <option value="#">Select A Query</option>
                         <option value="javascript:gotoChart()">Chart Page</option>
@@ -22,19 +21,23 @@
                         <option value="javascript:gotoFreqUser()">Frequently Mentioned User </option>
                         <option value="javascript:gotoHashtags()">Popular Hashtags</option>
                         <option value="##">Mentions per company </option>
-                        <option value="##">User Sentiment</option>
                         <option value="####">Sentiment about a Company</option>
+                        <option value="javascript:gotoAnalysis()">Analysis</option>
                         <option value="javascript:gotoIndex()">Back</option>
 
                     </select>
+                    <div id="numtweetbtn" class="btn-numtweet">
+                        <br><br><br><br><br>
+                        <button onclick="javascript:decide('telkomza')">Telkom</button>
+                        <button onclick="javascript:decide('rainsouthafrica')">Rain</button>
+                        <button onclick="javascript:decide('afrihost')">Afrihost</button>
+                        <button onclick="javascript:decide('mtnza')">MTN</button>
+                    </div>
                 </section>
 
-                <div id="numtweetbtn" class="btn-numtweet">
-                    <button onclick="javascript:decide('telkomza')">Telkom</button>
-                    <button onclick="javascript:decide('rainsouthafrica')">Rain</button>
-                    <button onclick="javascript:decide('afrihost')">Afrihost</button>
-                    <button onclick="javascript:decide('mtnza')">MTN</button>
-                </div>
+                <p>For more information about the queries<br><br>
+                    <a href="javascript:gotoHelp()">Click Here</a><br>
+                </p>
 
             </div>
         </section>
@@ -98,6 +101,9 @@
         }
         function gotoHelp(){
             window.location.href = "/queryhelp";
+        }
+        function gotoAnalysis(){
+            window.location.href = "/analysis";
         }
 
     </script>

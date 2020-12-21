@@ -3,11 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>general Sentiment</title>
+    <title>General Sentiment</title>
     <style type="text/css">
         #viz{
             width: 900px;
             height: 500px;
+        }
+        body{
+            background-color: #303030;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        h1{
+            font-weight: 300;
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        #contain{
+            float: right;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        #charts{
+            float: left;
+            margin-right: 0px;
         }
     </style>
 
@@ -23,17 +44,18 @@
     <div id="heading">
         <h1>sentiment of interactions with </h1>
     </div>
-
     <div id="company">
         <h1 th:text="${company}"></h1>
     </div>
+    <div id = "charts">
+        <div id="piechartBefore"></div>
+        <div id="piechartAfter"></div>
+    </div>
 
-    <div id="piechartBefore"></div>
-    <div id="piechartAfter"></div>
-
-
+<div id = "contain">
     <div id="counts">
     <div id="countbefore">
+        <h1><b>Before Lockdown</b></h1>
         <div>
             num positive interactions:
             <p th:text="${beforePositives}"></p>
@@ -54,7 +76,7 @@
     </div>
 
     <div id="countafter">
-
+        <h1><br><br><br><br><b>During Lockdown</b></h1>
         <div>
             num positive interactions:
             <p th:text="${afterPositives}"></p>
@@ -74,8 +96,8 @@
         </div>
     </div>
 
+    </div>
 </div>
-
 
 
 <script th:inline="javascript">
