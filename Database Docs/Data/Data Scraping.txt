@@ -1,0 +1,20 @@
+Data scraping was done via the use of twint
+
+We were able to set up a script that extracted tweets from 
+Afrihost, Telkom, MTN and Rain. Furthermore, we were able 
+to get tweets from individuals that mentioned the respective 
+companies.
+
+We filtered the tweets that we are interested in, by defining
+a set of words that we are interested in. The words below deal 
+with online learning, working from home and the general struggles 
+experienced during Covid-19.
+
+
+Some keywords:
+		   ["working from home ", "#WFH", "#workfromhome", "WiFi", "wifi", "isp", "ISP", 
+                    "university data", "data", "studying", "study",  "university", "exam", "online",
+                    "exams", "online learning", "zoom", "zero rated", "tests", "virtual", "assessments", 
+                    "assignment", "reception", "mobile data", "lockdown", "telecom", "Telkom", "MTN", 
+                    "Afrihost", "Rain", "slow internet", "cant study", "UKZN", "UCT", "WITS", "UJ", "UP", 
+                    "Stellenbosch", "covid", "coronavirus", "covid-19"]

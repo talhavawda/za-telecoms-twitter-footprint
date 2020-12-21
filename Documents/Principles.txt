@@ -3,9 +3,6 @@ model package - contains java files that access the project data
 controller package - contains java files that decide which page should 
 			be displayed.
 
-Side Note from Shaelin: Spring MVC makes use of the Observer pattern 
-			to implement request handling.
-
 Single Resposibility Principle
 	- Each of the html files deal with a specific query. The reults
 	that are displayed are unique to that page itself.
