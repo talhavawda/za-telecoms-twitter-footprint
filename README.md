@@ -1,7 +1,7 @@
 # Covid19-Digital-Footprint
 ### Quantifying and classifying the Digital (Social Media) Footprint of South African Telecommunications companies before and during the Covid-19 pandemic, and correlating it with the transition to online learining 
 
-- Cornerstone group project for COMP301 (Software Design) module
+- Cornerstone Data Science group project for the COMP301 (Software Design) module
 
 <br>
 
