@@ -1,7 +1,7 @@
 package GroupProject.WebInterface.controllers;
 
 import GroupProject.WebInterface.model.Database;
-import groupproject.webinterface.model.sentiment.SentimentEngine;
+import GroupProject.WebInterface.model.sentiment.SentimentEngine;
 import org.neo4j.driver.Record;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

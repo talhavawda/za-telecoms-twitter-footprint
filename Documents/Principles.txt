@@ -1,3 +1,5 @@
+common reuse principle
+
 resources package - contains the html files(views)
 model package - contains java files that access the project data
 controller package - contains java files that decide which page should 

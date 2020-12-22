@@ -17,6 +17,7 @@ Create Nodes and Relationships:
 ================================
 
 Execute the queries in the following order:
+(Find these queries in the Database Creational Queries folder)
 (Copy the Query code one at a time and paste it in the Neo4j editor and execute)
 
 1. Constraints
