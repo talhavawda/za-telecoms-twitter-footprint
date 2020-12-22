@@ -3,7 +3,8 @@ Create a database
 
 (Please dont create it in the repo folder as everyone has their own local db)
 
-1. Create a New Database.
+In Neo4j Desktop:
+1. Create a New Project then add a new Database -> Local Database.
 2. Click the three dots and then click manage
 3. Click on the button that says "Open Folder"
 A file explorer window should open up
