@@ -75,7 +75,7 @@ public class UserSentimentToCompanyController {
 
         viewTemplate.addAttribute("user",user);
 
-        
+
 
         return "usersentiment";
     }
