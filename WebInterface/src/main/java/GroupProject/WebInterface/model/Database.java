@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Todo - make this a singleton class (Apply the Singleton Design Pattern)
- *
  * Use an instance of this class to establish a  connection to the database
+ *
+ * This class applies the Singleton Design Pattern
  * */
 public class Database implements AutoCloseable{
 
@@ -20,8 +20,9 @@ public class Database implements AutoCloseable{
         connect();
     }
 
+
     /*
-	Singleton application
+	Singleton DP application
  */
     public static Database instance() {
         if (database == null ) {
@@ -39,6 +40,7 @@ public class Database implements AutoCloseable{
         //same for password
         driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("java_application", "12345"));
     }
+
 
     /*DEPRECATED
 

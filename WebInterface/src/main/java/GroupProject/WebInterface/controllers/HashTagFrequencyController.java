@@ -45,10 +45,10 @@ public class HashTagFrequencyController {
     void templateKeytoAttributeAdded(String templateKey, Model viewTemplate, String subsetID){
         assert (subsetID.equals("all")||subsetID.equals("user") ||subsetID.equals("company"));
 
-
         List<Record> records = Database.instance().query(templateKey);
 
         for (int i = 0; i < records.size(); i++) {
+
             String text = records.get(i).get("name").asString();
             String count = records.get(i).get("count") +"";
 

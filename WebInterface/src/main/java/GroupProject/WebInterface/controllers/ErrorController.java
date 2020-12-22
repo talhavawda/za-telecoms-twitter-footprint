@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * */
 @Controller
 public class ErrorController {
+
     /**
      * if URL Endpoint is "/error"
      * or if some error occurs serving another endpoint

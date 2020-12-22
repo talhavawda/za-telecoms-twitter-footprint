@@ -24,7 +24,8 @@ public class MentionsCountController {
      * returns the html page mentions from templates folder, formatted by Thymeleaf
      * */
     @RequestMapping(value="/mentions", method = RequestMethod.GET)
-    public String mentions(@RequestParam(value="company") String company, Model viewTemplate){
+    public String mentions(@RequestParam(value="company") String company, Model viewTemplate) {
+
         HashMap<String, Object> params = new HashMap<>();
         params.put("company", company);
 

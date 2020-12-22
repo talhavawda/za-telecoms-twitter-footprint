@@ -23,7 +23,8 @@ public class NumTweetsController {
      * returns the html page numtweets from templates folder, formatted by Thymeleaf
      * */
     @RequestMapping(value="/numtweets", method = RequestMethod.GET)
-    public String numTweets(@RequestParam(value="company") String company, Model viewTemplate){
+    public String numTweets(@RequestParam(value="company") String company, Model viewTemplate) {
+
         HashMap<String, Object> params = new HashMap<>();
         params.put("company", company);
 

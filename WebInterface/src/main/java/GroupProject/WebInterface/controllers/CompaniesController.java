@@ -22,8 +22,8 @@ public class CompaniesController {
      * */
     @RequestMapping(value="/companies", method = RequestMethod.GET)
     public String companies(Model viewTemplate){
-        List<Record> records = Database.instance().query("companies");
 
+        List<Record> records = Database.instance().query("companies");
 
         String comp1 = records.get(0).get(0).get("username").asString();
         String comp2 = records.get(1).get(0).get("username").asString();

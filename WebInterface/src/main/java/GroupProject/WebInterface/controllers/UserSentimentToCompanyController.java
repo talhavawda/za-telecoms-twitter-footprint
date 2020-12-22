@@ -36,6 +36,7 @@ public class UserSentimentToCompanyController {
         localhost:8080/usersentiment?user=____&company=____
         */
         List<Record> records = null;
+
         try{
 
             //get the tweets
@@ -63,25 +64,18 @@ public class UserSentimentToCompanyController {
         ArrayList<String> classifications = engine.concatAndJudgeStrings(tweetTexts, sample);
 
 
-
         int Positives = Collections.frequency(classifications,"Positive");
         int Neutrals = Collections.frequency(classifications,"Neutral");
         int Negatives = Collections.frequency(classifications,"Negative");
-
-
 
 
         viewTemplate.addAttribute("positives",Positives+"");
         viewTemplate.addAttribute("neutrals",Neutrals+"");
         viewTemplate.addAttribute("negatives",Negatives+"");
 
-
-
         viewTemplate.addAttribute("user",user);
 
-
-
-
+        
 
         return "usersentiment";
     }

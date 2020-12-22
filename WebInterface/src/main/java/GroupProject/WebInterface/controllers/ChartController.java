@@ -27,7 +27,7 @@ public class ChartController {
      * on the view layer javascript is used to make charts
      * */
     @RequestMapping(value="/chart", method = RequestMethod.GET)
-    public String numTweets(Model viewTemplate){
+    public String numTweets(Model viewTemplate) {
 
         String[] companies = {"telkomza","mtnza","rainsouthafrica","afrihost"};
         int[] counts = new int[companies.length];
@@ -37,6 +37,7 @@ public class ChartController {
             int result;
 
             try {
+
                 HashMap<String , Object> params = new HashMap<>();
                 params.put("company",companies[i]);
                 List<Record> records = Database.instance().query("count_tweets_by_company",params);
@@ -44,6 +45,7 @@ public class ChartController {
                 result = records.get(0).get(0).asInt();
 
             }
+
             catch (Exception e){
                 e.printStackTrace();
                 result = -1;
@@ -55,14 +57,7 @@ public class ChartController {
         }
 
 
-
         viewTemplate.addAttribute("test","iamatest");
-
-
-
-
-
-
 
         return "chart";
     }

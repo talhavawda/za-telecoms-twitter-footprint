@@ -25,7 +25,8 @@ public class WebInterfaceApplication {
 		//set up singletons
 		QueryNexus queryNexus = null;
 		Database db = null;
-//testing the singletons
+
+		//testing the singletons
 		try {
 			db = Database.instance();
 			queryNexus = QueryNexus.instance();
@@ -35,9 +36,7 @@ public class WebInterfaceApplication {
 		}
 
 
-
-
-/*
+/*      //Dont do this as it results in the db closing before queries can be made
 
 		try {
 			db.close();
