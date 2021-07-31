@@ -1,12 +1,12 @@
-# South African Telecoms' Twitter Footprint
-### Quantifying and classifying the Digital (Social Media) Footprint of South African Telecommunications companies before and during the Covid-19 pandemic, and correlating it with the transition to online learining 
+# South African Telecoms' Covid-19 Twitter Footprint
+### Quantifying, classifying, and contrasting the Twitter Footprint of South African Telecommunications companies before and during the Covid-19 pandemic
 
 - Cornerstone Data Science group project for the COMP301 (Software Design) module
 - (Previously project name: Covid19-Digital-Footprint)
 
 <br>
 
-### Execution Instructions
+## Execution Instructions
 
 #### Database
 1. Set up your local database using Neo4j Desktop
