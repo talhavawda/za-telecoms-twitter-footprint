@@ -5,6 +5,7 @@
 - (Previously project name: Covid19-Digital-Footprint)
 
 <br>
+
 ### Execution Instructions
 
 #### Database
