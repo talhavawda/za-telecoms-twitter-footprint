@@ -5,6 +5,7 @@
 - (Previously project name: Covid19-Digital-Footprint)
 
 <br>
+### Execution Instructions
 
 #### Database
 1. Set up your local database using Neo4j Desktop
