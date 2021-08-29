@@ -2,7 +2,7 @@
 ### Quantifying, classifying, and contrasting the Twitter Footprint of South African Telecommunications companies before and during the Covid-19 pandemic
 
 - Cornerstone Data Science group project for the COMP301 (Software Design) module
-- (Previously project name: Covid19-Digital-Footprint)
+- (Previous project name: Covid19-Digital-Footprint)
 
 <br>
 
